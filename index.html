@@ -22,10 +22,6 @@
     --white:#ffffff;
 }
 
-/* =========================
-GLOBAL
-========================= */
-
 *{
     margin:0;
     padding:0;
@@ -37,7 +33,6 @@ body{
     font-family:Arial,Helvetica,sans-serif;
     color:var(--text);
     line-height:1.6;
-
     background:
         radial-gradient(circle at 5% 5%,rgba(16,185,129,.12),transparent 24%),
         radial-gradient(circle at 95% 15%,rgba(52,211,153,.10),transparent 25%),
@@ -62,16 +57,13 @@ NAVBAR
     position:sticky;
     top:0;
     z-index:1000;
-
     background:rgba(255,255,255,.95);
     backdrop-filter:blur(14px);
-
     border-bottom:1px solid var(--border);
 }
 
 .nav{
     min-height:72px;
-
     display:flex;
     align-items:center;
     justify-content:space-between;
@@ -81,7 +73,6 @@ NAVBAR
     display:flex;
     align-items:center;
     gap:10px;
-
     color:var(--dark);
     font-size:21px;
     font-weight:800;
@@ -90,26 +81,19 @@ NAVBAR
 .logo-icon{
     width:42px;
     height:42px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     color:white;
-
     border-radius:13px;
-
-    background:
-        linear-gradient(135deg,var(--green),var(--emerald));
-
-    box-shadow:
-        0 7px 18px rgba(5,150,105,.25);
+    background:linear-gradient(135deg,var(--green),var(--emerald));
+    box-shadow:0 7px 18px rgba(5,150,105,.25);
 }
 
 .menu{
     display:flex;
     align-items:center;
-    gap:22px;
+    gap:20px;
 }
 
 .menu a{
@@ -124,10 +108,7 @@ NAVBAR
 
 .menu .telegram{
     color:white;
-
-    background:
-        linear-gradient(135deg,var(--green),var(--emerald));
-
+    background:linear-gradient(135deg,var(--green),var(--emerald));
     padding:10px 18px;
     border-radius:25px;
 }
@@ -139,7 +120,6 @@ HERO
 .hero{
     color:white;
     overflow:hidden;
-
     background:
         radial-gradient(circle at 85% 15%,rgba(110,231,183,.28),transparent 30%),
         radial-gradient(circle at 10% 90%,rgba(52,211,153,.18),transparent 28%),
@@ -148,42 +128,29 @@ HERO
 
 .hero-inner{
     min-height:650px;
-
     display:grid;
     grid-template-columns:1fr 1fr;
-
     gap:55px;
-
     align-items:center;
-
     padding:80px 0;
 }
 
 .badge{
     display:inline-block;
-
     padding:8px 15px;
-
     border:1px solid rgba(255,255,255,.25);
-
     background:rgba(255,255,255,.10);
-
     border-radius:25px;
-
     font-size:12px;
     font-weight:bold;
     letter-spacing:1px;
-
     margin-bottom:20px;
 }
 
 .hero h1{
     font-size:clamp(48px,6vw,75px);
-
     line-height:1;
-
     letter-spacing:-2px;
-
     margin-bottom:20px;
 }
 
@@ -194,17 +161,13 @@ HERO
 .hero h2{
     font-size:25px;
     font-weight:500;
-
     margin-bottom:18px;
 }
 
 .hero-text{
     max-width:590px;
-
     color:#e4f8ef;
-
     font-size:18px;
-
     margin-bottom:27px;
 }
 
@@ -216,22 +179,14 @@ HERO
 
 .btn{
     display:inline-flex;
-
     align-items:center;
     justify-content:center;
-
     gap:7px;
-
     padding:13px 21px;
-
     border-radius:12px;
-
     border:none;
-
     font-weight:bold;
-
     cursor:pointer;
-
     transition:.25s;
 }
 
@@ -241,9 +196,7 @@ HERO
 
 .btn-green{
     color:white;
-
-    background:
-        linear-gradient(135deg,var(--green),var(--emerald));
+    background:linear-gradient(135deg,var(--green),var(--emerald));
 }
 
 .btn-gold{
@@ -259,13 +212,9 @@ HERO
 .hero-points{
     display:flex;
     flex-wrap:wrap;
-
     gap:15px;
-
     margin-top:28px;
-
     color:#d9f9eb;
-
     font-size:13px;
 }
 
@@ -275,25 +224,17 @@ VIDEO PROMOSI
 
 .promo-video{
     padding:14px;
-
     background:rgba(255,255,255,.98);
-
     border-radius:25px;
-
-    box-shadow:
-        0 30px 80px rgba(0,60,40,.30);
+    box-shadow:0 30px 80px rgba(0,60,40,.30);
 }
 
 .promo-video-title{
     display:flex;
     align-items:center;
-
     gap:8px;
-
     padding:8px 8px 13px;
-
     color:var(--dark);
-
     font-size:14px;
     font-weight:800;
 }
@@ -301,53 +242,37 @@ VIDEO PROMOSI
 .promo-video-title span{
     width:30px;
     height:30px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:50%;
-
     color:white;
-
     background:var(--green);
-
     font-size:11px;
 }
 
 .youtube-box{
     position:relative;
-
     width:100%;
-
     aspect-ratio:16/9;
-
     overflow:hidden;
-
     border-radius:17px;
-
     background:#061a14;
 }
 
 .youtube-box iframe{
     position:absolute;
-
     width:100%;
     height:100%;
-
     left:0;
     top:0;
-
     border:0;
 }
 
 .video-caption{
     color:var(--muted);
-
     font-size:12px;
-
     text-align:center;
-
     padding:12px 10px 5px;
 }
 
@@ -357,25 +282,20 @@ TRUST
 
 .trust{
     background:white;
-
     border-bottom:1px solid var(--border);
 }
 
 .trust-inner{
     min-height:80px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     flex-wrap:wrap;
-
     gap:35px;
 }
 
 .trust-item{
     color:#64746e;
-
     font-size:13px;
     font-weight:bold;
 }
@@ -397,27 +317,20 @@ SECTION
 
 .heading{
     max-width:720px;
-
     text-align:center;
-
     margin:0 auto 45px;
 }
 
 .eyebrow{
     color:var(--green);
-
     font-size:12px;
-
     font-weight:800;
-
     letter-spacing:1.5px;
 }
 
 .heading h2{
     font-size:40px;
-
     line-height:1.15;
-
     margin:10px 0 15px;
 }
 
@@ -431,48 +344,33 @@ KELEBIHAN
 
 .features{
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
-
     gap:20px;
 }
 
 .feature{
     padding:28px;
-
     background:rgba(255,255,255,.92);
-
     border:1px solid var(--border);
-
     border-radius:20px;
-
-    box-shadow:
-        0 8px 25px rgba(5,150,105,.05);
-
+    box-shadow:0 8px 25px rgba(5,150,105,.05);
     transition:.25s;
 }
 
 .feature:hover{
     transform:translateY(-5px);
-
-    box-shadow:
-        0 15px 35px rgba(5,150,105,.12);
+    box-shadow:0 15px 35px rgba(5,150,105,.12);
 }
 
 .feature-icon{
     width:52px;
     height:52px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     margin-bottom:18px;
-
     border-radius:14px;
-
     background:#dff8ed;
-
     font-size:24px;
 }
 
@@ -482,7 +380,98 @@ KELEBIHAN
 
 .feature p{
     color:var(--muted);
+    font-size:14px;
+}
 
+/* =========================
+UNTUK GURU
+========================= */
+
+.teacher-benefits{
+    padding:85px 0;
+
+    background:
+        radial-gradient(circle at 10% 20%,rgba(16,185,129,.12),transparent 25%),
+        radial-gradient(circle at 90% 80%,rgba(52,211,153,.10),transparent 28%),
+        linear-gradient(135deg,#f0fdf8,#ffffff);
+}
+
+.teacher-benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.teacher-benefit{
+    position:relative;
+    padding:30px 25px;
+    background:rgba(255,255,255,.96);
+    border:1px solid #d7eee4;
+    border-radius:22px;
+    box-shadow:0 10px 28px rgba(5,150,105,.07);
+    transition:.25s;
+    overflow:hidden;
+}
+
+.teacher-benefit::before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    right:-35px;
+    top:-35px;
+    background:rgba(16,185,129,.08);
+    border-radius:50%;
+}
+
+.teacher-benefit:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(5,150,105,.13);
+    border-color:#8ee6c4;
+}
+
+.teacher-benefit-icon{
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:18px;
+    border-radius:16px;
+    background:#dff8ed;
+    color:#047857;
+    font-size:25px;
+}
+
+.teacher-benefit h3{
+    color:#17352d;
+    font-size:18px;
+    margin-bottom:9px;
+}
+
+.teacher-benefit p{
+    color:#64746e;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.teacher-highlight{
+    margin-top:35px;
+    padding:25px 30px;
+    color:white;
+    border-radius:20px;
+    background:linear-gradient(135deg,#047857,#059669,#10b981);
+    box-shadow:0 15px 35px rgba(5,150,105,.18);
+    text-align:center;
+}
+
+.teacher-highlight strong{
+    font-size:20px;
+}
+
+.teacher-highlight p{
+    margin-top:6px;
+    color:#dff9ed;
     font-size:14px;
 }
 
@@ -492,46 +481,33 @@ DEMO
 
 .demo-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:25px;
 }
 
 .demo-card{
     padding:32px;
-
     background:white;
-
     border:1px solid var(--border);
-
     border-radius:22px;
-
-    box-shadow:
-        0 8px 25px rgba(5,150,105,.05);
+    box-shadow:0 8px 25px rgba(5,150,105,.05);
 }
 
 .demo-label{
     color:var(--green);
-
     font-size:12px;
-
     font-weight:bold;
-
     letter-spacing:1px;
 }
 
 .demo-card h3{
     font-size:24px;
-
     margin:8px 0 10px;
 }
 
 .demo-card p{
     color:var(--muted);
-
     font-size:14px;
-
     margin-bottom:20px;
 }
 
@@ -541,57 +517,40 @@ PANDUAN
 
 .video-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:14px;
 }
 
 .video{
     display:flex;
-
     align-items:center;
-
     gap:14px;
-
     padding:17px;
-
     background:white;
-
     border:1px solid var(--border);
-
     border-radius:16px;
-
     transition:.2s;
 }
 
 .video:hover{
     transform:translateY(-3px);
-
-    box-shadow:
-        0 10px 25px rgba(5,150,105,.08);
+    box-shadow:0 10px 25px rgba(5,150,105,.08);
 }
 
 .video-number{
     width:38px;
     height:38px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:11px;
-
     background:#dff8ed;
-
     color:var(--green);
-
     font-weight:bold;
 }
 
 .video-title{
     flex:1;
-
     font-size:14px;
     font-weight:bold;
 }
@@ -599,15 +558,11 @@ PANDUAN
 .play{
     width:38px;
     height:38px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:50%;
-
     background:var(--green);
-
     color:white;
 }
 
@@ -624,41 +579,26 @@ HARGA
 
 .price-box{
     max-width:700px;
-
     margin:auto;
-
     padding:45px;
-
     color:white;
-
     text-align:center;
-
     border-radius:28px;
-
-    background:
-        linear-gradient(145deg,#064e3b,#047857,#059669);
-
-    box-shadow:
-        0 25px 55px rgba(5,150,105,.20);
+    background:linear-gradient(145deg,#064e3b,#047857,#059669);
+    box-shadow:0 25px 55px rgba(5,150,105,.20);
 }
 
 .price-label{
     font-size:12px;
-
     letter-spacing:1px;
-
     font-weight:bold;
 }
 
 .price{
     color:#ffe06b;
-
     font-size:70px;
-
     font-weight:900;
-
     line-height:1;
-
     margin:15px 0;
 }
 
@@ -668,27 +608,20 @@ HARGA
 
 .price-list{
     max-width:430px;
-
     margin:28px auto;
-
     text-align:left;
-
     list-style:none;
 }
 
 .price-list li{
     padding:8px 0;
-
     border-bottom:1px solid rgba(255,255,255,.13);
 }
 
 .price-list li::before{
     content:"✓";
-
     color:#ffe06b;
-
     font-weight:bold;
-
     margin-right:9px;
 }
 
@@ -698,85 +631,55 @@ PAKEJ
 
 .package-box{
     margin-bottom:35px;
-
     background:transparent;
-
     border:none;
 }
 
 .package-header{
     padding:20px 24px;
-
     margin-bottom:20px;
-
     color:white;
-
     font-size:20px;
-
     font-weight:bold;
-
     border-radius:18px;
-
-    background:
-        linear-gradient(135deg,#047857,#059669,#10b981);
-
-    box-shadow:
-        0 10px 25px rgba(5,150,105,.15);
+    background:linear-gradient(135deg,#047857,#059669,#10b981);
+    box-shadow:0 10px 25px rgba(5,150,105,.15);
 }
 
 .package-grid{
     display:grid;
-
     grid-template-columns:repeat(4,1fr);
-
     gap:18px;
 }
 
 .package-row{
     min-height:155px;
-
     display:flex;
-
     flex-direction:column;
-
     justify-content:space-between;
-
     gap:15px;
-
     padding:22px;
-
     background:rgba(255,255,255,.94);
-
     border:1px solid #d4eee3;
-
     border-radius:18px;
-
-    box-shadow:
-        0 8px 25px rgba(5,150,105,.07);
-
+    box-shadow:0 8px 25px rgba(5,150,105,.07);
     transition:.25s;
 }
 
 .package-row:hover{
     transform:translateY(-5px);
-
     border-color:#6ee7b7;
-
-    box-shadow:
-        0 16px 35px rgba(5,150,105,.14);
+    box-shadow:0 16px 35px rgba(5,150,105,.14);
 }
 
 .package-name{
     color:#17352d;
-
     font-size:17px;
-
     font-weight:700;
 }
 
 .package-name::before{
     content:"📦";
-
     margin-right:7px;
 }
 
@@ -786,33 +689,23 @@ PAKEJ
 
 .view-btn{
     padding:9px 15px;
-
     color:#047857;
-
     background:#ecfdf5;
-
     border:1px solid #a7f3d0;
-
     border-radius:20px;
-
     font-weight:bold;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
 .view-btn:hover{
     background:#d1fae5;
-
     transform:translateY(-2px);
 }
 
 .hidden-price{
     display:none;
-
     margin-top:8px;
-
     animation:fadeIn .25s ease;
 }
 
@@ -822,42 +715,27 @@ PAKEJ
 
 .hidden-price strong{
     display:block;
-
     color:#047857;
-
     font-size:23px;
-
     margin-bottom:8px;
 }
 
 .pay-btn{
     display:inline-block;
-
     padding:9px 14px;
-
     color:white;
-
-    background:
-        linear-gradient(135deg,#047857,#10b981);
-
+    background:linear-gradient(135deg,#047857,#10b981);
     border-radius:20px;
-
     font-size:12px;
-
     font-weight:bold;
 }
 
 .package-note{
     padding:18px;
-
     color:#52635d;
-
     background:#fff9df;
-
     border-radius:15px;
-
     font-size:13px;
-
     margin-top:18px;
 }
 
@@ -865,31 +743,38 @@ PAKEJ
 SUBJEK
 ========================= */
 
+.subject-section{
+    position:relative;
+    overflow:hidden;
+
+    background:
+        radial-gradient(circle at 15% 20%,rgba(16,185,129,.14),transparent 25%),
+        radial-gradient(circle at 85% 80%,rgba(52,211,153,.12),transparent 28%),
+        linear-gradient(135deg,#ecfdf5,#f7fffb);
+}
+
 .subjects{
     display:flex;
-
     flex-wrap:wrap;
-
     justify-content:center;
-
-    gap:10px;
+    gap:12px;
 }
 
 .subject{
-    padding:10px 16px;
-
+    padding:11px 17px;
     color:#52635d;
-
-    background:white;
-
-    border:1px solid var(--border);
-
+    background:rgba(255,255,255,.92);
+    border:1px solid #cfece0;
     border-radius:30px;
-
     font-size:13px;
+    box-shadow:0 6px 18px rgba(5,150,105,.06);
+    transition:.2s;
+}
 
-    box-shadow:
-        0 4px 12px rgba(5,150,105,.04);
+.subject:hover{
+    transform:translateY(-3px);
+    color:#047857;
+    border-color:#8ee6c4;
 }
 
 /* =========================
@@ -898,55 +783,39 @@ TEMPAHAN
 
 .order-grid{
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:25px;
 }
 
 .order-card{
     padding:30px;
-
     background:white;
-
     border:1px solid var(--border);
-
     border-radius:22px;
-
-    box-shadow:
-        0 8px 25px rgba(5,150,105,.05);
+    box-shadow:0 8px 25px rgba(5,150,105,.05);
 }
 
 .step{
     display:flex;
-
     gap:15px;
-
     margin:20px 0;
 }
 
 .step-number{
     width:38px;
     height:38px;
-
     min-width:38px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:50%;
-
     color:white;
-
     background:var(--green);
-
     font-weight:bold;
 }
 
 .step p{
     color:var(--muted);
-
     font-size:14px;
 }
 
@@ -956,11 +825,8 @@ CTA
 
 .cta{
     padding:80px 0;
-
     color:white;
-
     text-align:center;
-
     background:
         radial-gradient(circle at 20% 20%,rgba(167,243,208,.15),transparent 25%),
         radial-gradient(circle at 80% 80%,rgba(52,211,153,.15),transparent 25%),
@@ -969,15 +835,12 @@ CTA
 
 .cta h2{
     font-size:42px;
-
     line-height:1.15;
-
     margin-bottom:12px;
 }
 
 .cta p{
     color:#d8f8eb;
-
     margin-bottom:25px;
 }
 
@@ -987,52 +850,39 @@ FOOTER
 
 footer{
     padding:50px 0 20px;
-
     color:white;
-
     background:#032e23;
 }
 
 .footer-grid{
     display:grid;
-
     grid-template-columns:2fr 1fr 1fr;
-
     gap:40px;
 }
 
 .footer-title{
     font-size:23px;
-
     font-weight:bold;
-
     margin-bottom:10px;
 }
 
 footer p,
 footer a{
     color:#bce7d6;
-
     font-size:14px;
 }
 
 footer a{
     display:block;
-
     margin:7px 0;
 }
 
 .copyright{
     padding-top:20px;
-
     margin-top:35px;
-
     color:#7db9a2;
-
     border-top:1px solid rgba(255,255,255,.1);
-
     text-align:center;
-
     font-size:12px;
 }
 
@@ -1041,7 +891,6 @@ ANIMATION
 ========================= */
 
 @keyframes fadeIn{
-
     from{
         opacity:0;
         transform:translateY(-5px);
@@ -1051,7 +900,6 @@ ANIMATION
         opacity:1;
         transform:translateY(0);
     }
-
 }
 
 /* =========================
@@ -1066,7 +914,6 @@ TABLET
 
     .hero-inner{
         grid-template-columns:1fr;
-
         text-align:center;
     }
 
@@ -1087,6 +934,10 @@ TABLET
         grid-template-columns:1fr 1fr;
     }
 
+    .teacher-benefit-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
     .demo-grid,
     .order-grid{
         grid-template-columns:1fr;
@@ -1099,7 +950,6 @@ TABLET
     .footer-grid{
         grid-template-columns:1fr;
     }
-
 }
 
 /* =========================
@@ -1128,6 +978,10 @@ PHONE
         grid-template-columns:1fr;
     }
 
+    .teacher-benefit-grid{
+        grid-template-columns:1fr;
+    }
+
     .video-grid{
         grid-template-columns:1fr;
     }
@@ -1150,13 +1004,11 @@ PHONE
 
     .package-grid{
         grid-template-columns:1fr 1fr;
-
         gap:12px;
     }
 
     .package-row{
         min-height:140px;
-
         padding:17px;
     }
 
@@ -1166,7 +1018,6 @@ PHONE
 
     .view-btn{
         padding:8px 11px;
-
         font-size:12px;
     }
 
@@ -1178,6 +1029,9 @@ PHONE
         width:100%;
     }
 
+    .teacher-highlight{
+        padding:22px 18px;
+    }
 }
 
 /* PHONE KECIL */
@@ -1193,9 +1047,7 @@ PHONE
 </style>
 </head>
 
-
 <body>
-
 
 <!-- =========================
 NAVBAR
@@ -1213,10 +1065,11 @@ NAVBAR
 
 </a>
 
-
 <nav class="menu">
 
 <a href="#kelebihan">Kelebihan</a>
+
+<a href="#guru">Untuk Guru</a>
 
 <a href="#demo">Demo</a>
 
@@ -1229,9 +1082,7 @@ NAVBAR
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank"
 class="telegram">
-
 Telegram
-
 </a>
 
 </nav>
@@ -1249,23 +1100,19 @@ HERO
 
 <div class="container hero-inner">
 
-
 <div>
 
 <div class="badge">
 eRPH DIGITAL UNTUK GURU
 </div>
 
-
 <h1>
 eRPH <span>UNAR</span>
 </h1>
 
-
 <h2>
 Pengurusan RPH lebih mudah, cepat & tersusun.
 </h2>
-
 
 <p class="hero-text">
 
@@ -1275,36 +1122,26 @@ RPH dengan lebih sistematik.
 
 </p>
 
-
 <div class="hero-buttons">
 
 <a href="#demo"
 class="btn btn-gold">
-
 Lihat Demo →
-
 </a>
-
 
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank"
 class="btn btn-white">
-
 📲 Telegram
-
 </a>
 
 </div>
 
-
 <div class="hero-points">
 
 <span>✓ Sekolah Menengah</span>
-
 <span>✓ RPT Setahun</span>
-
 <span>✓ Auto + Edit</span>
-
 <span>✓ Boleh Print</span>
 
 </div>
@@ -1324,7 +1161,6 @@ VIDEO PROMOSI eRPH UNAR
 
 </div>
 
-
 <div class="youtube-box">
 
 <iframe
@@ -1336,7 +1172,6 @@ allowfullscreen>
 
 </div>
 
-
 <p class="video-caption">
 
 Kenali eRPH UNAR dan lihat bagaimana ia membantu
@@ -1345,7 +1180,6 @@ memudahkan pengurusan RPH guru.
 </p>
 
 </div>
-
 
 </div>
 
@@ -1393,7 +1227,6 @@ KELEBIHAN
 
 <div class="container">
 
-
 <div class="heading">
 
 <div class="eyebrow">
@@ -1411,9 +1244,7 @@ dengan lebih cepat dan tersusun.
 
 </div>
 
-
 <div class="features">
-
 
 <div class="feature">
 
@@ -1426,7 +1257,7 @@ Pilih MINGGU
 </h3>
 
 <p>
-Hanya pilih minggu yang diperlukan.
+Guru hanya perlu memilih minggu yang diperlukan.
 ERPH tersedia untuk tempoh setahun.
 </p>
 
@@ -1521,6 +1352,171 @@ Boleh terus dicetak apabila diperlukan.
 
 </div>
 
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =========================
+UNTUK GURU
+========================= -->
+
+<section class="teacher-benefits" id="guru">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+DIREKA UNTUK GURU
+</div>
+
+<h2>
+Kurangkan masa mengurus RPH,
+lebih fokus kepada pengajaran.
+</h2>
+
+<p>
+eRPH UNAR membantu menyediakan RPH lebih awal
+supaya guru boleh memberi lebih tumpuan kepada
+pengajaran dan pembelajaran.
+</p>
+
+</div>
+
+
+<div class="teacher-benefit-grid">
+
+
+<div class="teacher-benefit">
+
+<div class="teacher-benefit-icon">
+📅
+</div>
+
+<h3>
+Hanya Tukar Minggu
+</h3>
+
+<p>
+Guru hanya perlu memilih minggu yang diperlukan.
+Tarikh dan RPT telah dimasukkan ke dalam RPH
+untuk tempoh seminggu.
+</p>
+
+</div>
+
+
+<div class="teacher-benefit">
+
+<div class="teacher-benefit-icon">
+⚡
+</div>
+
+<h3>
+Auto Edit Benar-Benar Membantu
+</h3>
+
+<p>
+Fungsi Auto Edit membantu guru mengedit RPT
+terus dalam RPH dengan lebih cepat tanpa perlu
+menyediakan semuanya dari awal.
+</p>
+
+</div>
+
+
+<div class="teacher-benefit">
+
+<div class="teacher-benefit-icon">
+🎯
+</div>
+
+<h3>
+Lebih Fokus Kepada Pengajaran
+</h3>
+
+<p>
+Apabila RPH telah siap, guru boleh mengurangkan
+masa mengurus RPH dan memberi lebih tumpuan
+kepada pengajaran di dalam kelas.
+</p>
+
+</div>
+
+
+<div class="teacher-benefit">
+
+<div class="teacher-benefit-icon">
+☁️
+</div>
+
+<h3>
+RPH Secara Online
+</h3>
+
+<p>
+RPH disediakan dalam format spreadsheet online
+dan boleh diakses serta dikemaskini mengikut
+keperluan guru.
+</p>
+
+</div>
+
+
+<div class="teacher-benefit">
+
+<div class="teacher-benefit-icon">
+💾
+</div>
+
+<h3>
+Autosave
+</h3>
+
+<p>
+Perubahan yang dibuat akan disimpan secara automatik,
+jadi guru tidak perlu risau terlupa menyimpan RPH
+secara manual.
+</p>
+
+</div>
+
+
+<div class="teacher-benefit">
+
+<div class="teacher-benefit-icon">
+🗂️
+</div>
+
+<h3>
+Lebih Tersusun
+</h3>
+
+<p>
+RPH, RPT dan maklumat pengajaran diuruskan
+secara lebih tersusun dalam satu sistem yang
+mudah dicapai.
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="teacher-highlight">
+
+<strong>
+✨ RPH dah siap — guru boleh fokus kepada pengajaran.
+</strong>
+
+<p>
+Pilih minggu, semak, kemaskini jika perlu dan teruskan
+perancangan pengajaran anda.
+</p>
 
 </div>
 
@@ -1536,7 +1532,6 @@ DEMO
 <section class="section soft" id="demo">
 
 <div class="container">
-
 
 <div class="heading">
 
@@ -1575,9 +1570,7 @@ Demo eRPH untuk Kumpulan A.
 <a href="https://docs.google.com/spreadsheets/d/1VbTlMoLrrpoahf57iCfiTukxcmcUpyjUvO52XphbBV8/edit?usp=drive_link"
 target="_blank"
 class="btn btn-green">
-
 Buka Demo →
-
 </a>
 
 </div>
@@ -1602,13 +1595,10 @@ Selangor, Kuala Lumpur, Labuan & Putrajaya.
 <a href="https://docs.google.com/spreadsheets/d/1W-jExr4N-YBO7huBZiQ4RRvfZA0KANSAssPIr1v_BlA/edit?usp=drive_link"
 target="_blank"
 class="btn btn-green">
-
 Buka Demo →
-
 </a>
 
 </div>
-
 
 </div>
 
@@ -1624,7 +1614,6 @@ PANDUAN
 <section class="section" id="panduan">
 
 <div class="container">
-
 
 <div class="heading">
 
@@ -1717,7 +1706,6 @@ target="_blank"
 class="play">▶</a>
 </div>
 
-
 </div>
 
 
@@ -1726,13 +1714,10 @@ class="play">▶</a>
 <a href="https://bit.ly/PanduanPDFErph"
 target="_blank"
 class="btn btn-green">
-
 📄 Panduan PDF
-
 </a>
 
 </div>
-
 
 </div>
 
@@ -1746,7 +1731,6 @@ HARGA
 <section class="section price-section" id="harga">
 
 <div class="container">
-
 
 <div class="heading">
 
@@ -1767,16 +1751,13 @@ Pilihan pakej tersedia mengikut keperluan anda.
 
 <div class="price-box">
 
-
 <div class="price-label">
 HARGA BERMULA
 </div>
 
-
 <div class="price">
 RM30
 </div>
-
 
 <div class="price-sub">
 Satu tingkatan
@@ -1802,11 +1783,8 @@ Satu tingkatan
 
 <a href="#pakej"
 class="btn btn-gold">
-
 Lihat Pilihan Pakej ↓
-
 </a>
-
 
 </div>
 
@@ -1822,7 +1800,6 @@ PAKEJ
 <section class="section soft" id="pakej">
 
 <div class="container">
-
 
 <div class="heading">
 
@@ -1841,9 +1818,7 @@ Klik <strong>Lihat Pakej</strong> untuk melihat harga.
 </div>
 
 
-<!-- =========================
-TANPA JADUAL
-========================= -->
+<!-- ERPH TANPA JADUAL -->
 
 <div class="package-box">
 
@@ -1851,11 +1826,8 @@ TANPA JADUAL
 1. ERPH TANPA JADUAL
 </div>
 
-
 <div class="package-grid">
 
-
-<!-- 1 -->
 
 <div class="package-row">
 
@@ -1872,9 +1844,7 @@ Satu Tingkatan
 <a href="https://toyyibpay.com/ERPH-UNAR-SATU-TING-1"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -1885,17 +1855,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('p1',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 2 -->
 
 <div class="package-row">
 
@@ -1912,9 +1878,7 @@ Dua Tingkatan
 <a href="https://toyyibpay.com/ERPH-UNAR-DUA-TING-2"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -1925,17 +1889,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('p2',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 3 -->
 
 <div class="package-row">
 
@@ -1952,9 +1912,7 @@ Tiga Tingkatan
 <a href="https://toyyibpay.com/ERPH-UNAR-TIGA-TING-3"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -1965,17 +1923,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('p3',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 4 -->
 
 <div class="package-row">
 
@@ -1992,9 +1946,7 @@ Empat Tingkatan
 <a href="https://toyyibpay.com/ERPH-UNAR-EMPAT-TING-4"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2005,17 +1957,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('p4',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 5 -->
 
 <div class="package-row">
 
@@ -2032,9 +1980,7 @@ Lima Tingkatan
 <a href="https://toyyibpay.com/ERPH-UNAR-LIMA-TING-5"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2045,17 +1991,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('p5',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 6 -->
 
 <div class="package-row">
 
@@ -2072,9 +2014,7 @@ Enam Tingkatan
 <a href="https://toyyibpay.com/ERPH-UNAR-ENAM-TING-6"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2085,17 +2025,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('p6',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 7 -->
 
 <div class="package-row">
 
@@ -2112,9 +2048,7 @@ Tujuh Tingkatan
 <a href="https://toyyibpay.com/ERPH-UNAR-TUJUH-TING-7"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2125,17 +2059,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('p7',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 8 -->
 
 <div class="package-row">
 
@@ -2152,9 +2082,7 @@ Lapan Tingkatan
 <a href="https://toyyibpay.com/ERPH-UNAR-LAPAN-TING-8"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2165,9 +2093,7 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('p8',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
@@ -2176,7 +2102,6 @@ Lihat Pakej
 
 
 </div>
-
 
 <div class="package-note">
 
@@ -2188,9 +2113,7 @@ Harga hanya dipaparkan apabila anda memilih pakej.
 </div>
 
 
-<!-- =========================
-ERPH + JADUAL
-========================= -->
+<!-- ERPH + JADUAL -->
 
 <div class="package-box">
 
@@ -2198,11 +2121,8 @@ ERPH + JADUAL
 2. ERPH + JADUAL
 </div>
 
-
 <div class="package-grid">
 
-
-<!-- 1 -->
 
 <div class="package-row">
 
@@ -2219,9 +2139,7 @@ Satu Tingkatan + Jadual
 <a href="https://toyyibpay.com/ERPH-1-TING-JADUAL"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2232,17 +2150,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('j1',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 2 -->
 
 <div class="package-row">
 
@@ -2259,9 +2173,7 @@ Dua Tingkatan + Jadual
 <a href="https://toyyibpay.com/ERPH-2-TING-JADUAL"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2272,17 +2184,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('j2',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 3 -->
 
 <div class="package-row">
 
@@ -2299,9 +2207,7 @@ Tiga Tingkatan + Jadual
 <a href="https://toyyibpay.com/ERPH-3-TING-JADUAL"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2312,17 +2218,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('j3',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 4 -->
 
 <div class="package-row">
 
@@ -2339,9 +2241,7 @@ Empat Tingkatan + Jadual
 <a href="https://toyyibpay.com/ERPH-4-TING-JADUAL"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2352,17 +2252,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('j4',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 5 -->
 
 <div class="package-row">
 
@@ -2379,9 +2275,7 @@ Lima Tingkatan + Jadual
 <a href="https://toyyibpay.com/ERPH-5-TING-JADUAL"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2392,17 +2286,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('j5',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 6 -->
 
 <div class="package-row">
 
@@ -2419,9 +2309,7 @@ Enam Tingkatan + Jadual
 <a href="https://toyyibpay.com/ERPH-6-TING-JDUAL"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2432,17 +2320,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('j6',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 7 -->
 
 <div class="package-row">
 
@@ -2459,9 +2343,7 @@ Tujuh Tingkatan + Jadual
 <a href="https://toyyibpay.com/ERPH-7-TING-JDUAL"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2472,17 +2354,13 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('j7',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
 
-
-<!-- 8 -->
 
 <div class="package-row">
 
@@ -2499,9 +2377,7 @@ Lapan Tingkatan + Jadual
 <a href="https://toyyibpay.com/ERPH-8-TING-JADUAL"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2512,9 +2388,7 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('j8',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
@@ -2527,9 +2401,7 @@ Lihat Pakej
 </div>
 
 
-<!-- =========================
-SETTING JADUAL
-========================= -->
+<!-- TAMBAHAN SETTING JADUAL -->
 
 <div class="package-box">
 
@@ -2537,9 +2409,7 @@ SETTING JADUAL
 3. TAMBAHAN SETTING JADUAL
 </div>
 
-
 <div class="package-grid">
-
 
 <div class="package-row">
 
@@ -2556,9 +2426,7 @@ Setting Jadual Sahaja
 <a href="https://toyyibpay.com/TAMBAHAN-SETTING-JADUAL-SHJ"
 target="_blank"
 class="pay-btn">
-
 Bayar Sekarang
-
 </a>
 
 </div>
@@ -2569,15 +2437,12 @@ Bayar Sekarang
 
 <button class="view-btn"
 onclick="showPrice('s1',this)">
-
 Lihat Pakej
-
 </button>
 
 </div>
 
 </div>
-
 
 </div>
 
@@ -2592,10 +2457,9 @@ Lihat Pakej
 SUBJEK
 ========================= -->
 
-<section class="section" id="subjek">
+<section class="section subject-section" id="subjek">
 
 <div class="container">
-
 
 <div class="heading">
 
@@ -2695,7 +2559,6 @@ TEMPAHAN
 
 <div class="container">
 
-
 <div class="heading">
 
 <div class="eyebrow">
@@ -2714,7 +2577,6 @@ Cara mendapatkan eRPH UNAR.
 
 <div class="order-card">
 
-
 <div class="step">
 
 <div class="step-number">
@@ -2723,9 +2585,7 @@ Cara mendapatkan eRPH UNAR.
 
 <div>
 
-<strong>
-Pilih pakej
-</strong>
+<strong>Pilih pakej</strong>
 
 <p>
 Pilih pakej mengikut bilangan tingkatan
@@ -2745,9 +2605,7 @@ dan keperluan jadual.
 
 <div>
 
-<strong>
-Buat bayaran
-</strong>
+<strong>Buat bayaran</strong>
 
 <p>
 Klik Lihat Pakej dan kemudian
@@ -2767,9 +2625,7 @@ Bayar Sekarang.
 
 <div>
 
-<strong>
-Isi borang tempahan
-</strong>
+<strong>Isi borang tempahan</strong>
 
 <p>
 Sila buat bayaran terlebih dahulu
@@ -2780,12 +2636,10 @@ sebelum mengisi borang.
 
 </div>
 
-
 </div>
 
 
 <div class="order-card">
-
 
 <h3>
 📧 Penghantaran Template
@@ -2801,13 +2655,8 @@ ke email anda.
 <br>
 
 <p>
-
-<strong>
-Sila semak folder SPAM
-</strong>
-
+<strong>Sila semak folder SPAM</strong>
 jika tiada di Inbox.
-
 </p>
 
 <br>
@@ -2815,9 +2664,7 @@ jika tiada di Inbox.
 <a href="https://forms.gle/Bzkx7dDErswXUU1K6"
 target="_blank"
 class="btn btn-green">
-
 📝 Borang Tempahan
-
 </a>
 
 <br><br>
@@ -2825,9 +2672,7 @@ class="btn btn-green">
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank"
 class="btn btn-gold">
-
 📲 Telegram
-
 </a>
 
 </div>
@@ -2857,21 +2702,15 @@ eRPH UNAR — lebih mudah, lebih pantas,
 lebih tersusun.
 </p>
 
-
 <a href="#demo"
 class="btn btn-gold">
-
 Lihat Demo
-
 </a>
-
 
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank"
 class="btn btn-white">
-
 📲 Telegram Edu@UNARCHANNEL
-
 </a>
 
 </div>
@@ -2915,6 +2754,10 @@ Pautan
 Kelebihan
 </a>
 
+<a href="#guru">
+Untuk Guru
+</a>
+
 <a href="#demo">
 Demo
 </a>
@@ -2942,23 +2785,17 @@ Hubungi
 
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank">
-
 📲 Telegram
-
 </a>
 
 <a href="https://forms.gle/Bzkx7dDErswXUU1K6"
 target="_blank">
-
 📝 Borang Tempahan
-
 </a>
 
 <a href="https://bit.ly/PanduanPDFErph"
 target="_blank">
-
 📄 Panduan PDF
-
 </a>
 
 </div>
