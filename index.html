@@ -3,219 +3,966 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>eRPH UNAR</title>
+
+<title>eRPH UNAR | Sistem eRPH Digital</title>
 
 <style>
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    color: #1f2937;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #17352d;
+    background: #f7faf9;
+    line-height: 1.6;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* NAVIGATION */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,0.96);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+}
+
+.nav-container {
+    max-width: 1150px;
+    margin: auto;
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #087f5b;
+}
+
+.logo span {
+    color: #17352d;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.menu a {
+    color: #17352d;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.menu a:hover {
+    color: #087f5b;
+}
+
+.telegram {
+    background: #087f5b;
+    color: white !important;
+    padding: 10px 18px;
+    border-radius: 25px;
+}
+
+/* HERO */
 .hero {
-    background: linear-gradient(135deg, #087f5b, #20a06b);
+    background: linear-gradient(135deg, #006b4d, #18a56f);
     color: white;
-    text-align: center;
-    padding: 70px 20px;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1150px;
+    margin: auto;
+    min-height: 560px;
+    padding: 80px 25px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin: 0 0 10px;
+    font-size: 62px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 27px;
+    margin-bottom: 15px;
 }
 
 .hero p {
-    font-size: 20px;
-    margin: 10px 0 25px;
+    font-size: 19px;
+    margin-bottom: 25px;
+    opacity: 0.95;
+}
+
+.hero-list {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.hero-list li {
+    margin: 10px 0;
+}
+
+.hero-list li::before {
+    content: "✓";
+    background: white;
+    color: #087f5b;
+    border-radius: 50%;
+    padding: 2px 6px;
+    margin-right: 10px;
+    font-weight: bold;
 }
 
 .btn {
     display: inline-block;
     padding: 14px 25px;
-    margin: 6px;
     border-radius: 30px;
-    text-decoration: none;
     font-weight: bold;
+    margin-right: 8px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-white {
     background: white;
     color: #087f5b;
 }
 
-.btn:hover {
-    opacity: 0.85;
+.btn-yellow {
+    background: #ffc928;
+    color: #17352d;
 }
 
+.hero-screen {
+    background: white;
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    transform: rotate(1deg);
+}
+
+.dashboard {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.dashboard-top {
+    background: #087f5b;
+    color: white;
+    padding: 15px;
+    font-weight: bold;
+}
+
+.dashboard-body {
+    padding: 20px;
+    background: #f5f7f8;
+}
+
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 18px 8px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.dashboard-card strong {
+    display: block;
+    font-size: 23px;
+    color: #087f5b;
+}
+
+/* GENERAL */
 .container {
-    max-width: 1100px;
+    max-width: 1150px;
     margin: auto;
-    padding: 45px 20px;
+    padding: 75px 25px;
 }
 
 .section-title {
     text-align: center;
-    font-size: 30px;
-    margin-bottom: 30px;
+    font-size: 34px;
+    margin-bottom: 15px;
 }
 
+.section-subtitle {
+    text-align: center;
+    color: #66736e;
+    max-width: 650px;
+    margin: 0 auto 45px;
+}
+
+/* FEATURES */
 .features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+    gap: 22px;
 }
 
 .card {
     background: white;
-    padding: 25px;
-    border-radius: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    padding: 30px 22px;
+    border-radius: 18px;
     text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    margin: auto auto 18px;
+    border-radius: 50%;
+    background: #e3f6ee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
 }
 
 .card h3 {
     color: #087f5b;
+    margin-bottom: 10px;
 }
 
-.price {
-    background: #e8f7f1;
+/* ABOUT */
+.about {
+    background: white;
+}
+
+.about-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text h2 {
+    font-size: 34px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    color: #596761;
+}
+
+.about-image {
+    min-height: 300px;
+    border-radius: 20px;
+    background: linear-gradient(135deg,#e4f6ef,#c4eadb);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 90px;
+}
+
+/* DEMO */
+.demo {
     text-align: center;
-    padding: 40px 20px;
 }
 
-.price h2 {
-    font-size: 40px;
+.demo-box {
+    max-width: 850px;
+    margin: auto;
+    min-height: 280px;
+    border-radius: 20px;
+    background: linear-gradient(135deg,#073f30,#087f5b);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.play {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    background: white;
+    color: #087f5b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* PRICE */
+.price-section {
+    background: #eef8f4;
+}
+
+.pricing {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.price-card {
+    background: white;
+    border-radius: 20px;
+    padding: 35px 25px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+    border: 2px solid transparent;
+}
+
+.price-card.popular {
+    border-color: #087f5b;
+    transform: scale(1.03);
+}
+
+.badge {
+    background: #ffc928;
+    color: #17352d;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.price-card h3 {
+    margin: 20px 0 10px;
     color: #087f5b;
 }
 
-.contact {
+.price {
+    font-size: 42px;
+    font-weight: bold;
+    color: #087f5b;
+    margin: 15px 0;
+}
+
+.price-list {
+    list-style: none;
+    text-align: left;
+    margin: 20px 0;
+}
+
+.price-list li {
+    margin: 10px 0;
+}
+
+.price-list li::before {
+    content: "✓";
+    color: #087f5b;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* TESTIMONI */
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.testimonial {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.quote {
+    font-size: 35px;
+    color: #087f5b;
+}
+
+.testimonial p {
+    color: #596761;
+    margin-bottom: 20px;
+}
+
+/* CTA */
+.cta {
+    max-width: 1100px;
+    margin: 40px auto 80px;
+    padding: 45px 30px;
+    border-radius: 25px;
+    background: linear-gradient(135deg,#087f5b,#18a56f);
+    color: white;
     text-align: center;
 }
 
+.cta h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.cta p {
+    margin-bottom: 25px;
+}
+
+/* FOOTER */
 footer {
-    background: #12372a;
+    background: #073f30;
     color: white;
+    padding: 50px 25px 25px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+}
+
+.footer-title {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+footer a {
+    color: #d7eee6;
+    display: block;
+    margin: 7px 0;
+}
+
+.copyright {
     text-align: center;
-    padding: 25px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    margin-top: 35px;
+    padding-top: 20px;
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+/* MOBILE */
+@media(max-width: 850px) {
+
+    .menu {
+        display: none;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .hero-list {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .features {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .about-box {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing {
+        grid-template-columns: 1fr;
+    }
+
+    .price-card.popular {
+        transform: none;
+    }
+
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width: 500px) {
+
+    .features {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 38px;
+    }
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+    .btn {
+        display: block;
+        margin: 10px auto;
+        max-width: 230px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- BAHAGIAN UTAMA -->
-<section class="hero">
-    <h1>📘 eRPH UNAR</h1>
+<!-- NAVIGATION -->
+<nav>
+<div class="nav-container">
 
-    <p>Sistem eRPH Digital untuk Guru</p>
+    <div class="logo">
+        📘 eRPH <span>UNAR</span>
+    </div>
 
-    <p>Lebih mudah • Lebih pantas • Lebih tersusun</p>
+    <div class="menu">
+        <a href="#utama">Utama</a>
+        <a href="#ciri">Ciri Utama</a>
+        <a href="#demo">Demo</a>
+        <a href="#pakej">Pakej</a>
+        <a href="#testimoni">Testimoni</a>
+        <a href="#hubungi">Hubungi</a>
+        <a href="LINK_TELEGRAM_ANDA" class="telegram">
+            📲 Telegram
+        </a>
+    </div>
 
-    <a href="#" class="btn">🚀 Lihat Demo</a>
-
-    <a href="#" class="btn">📲 Dapatkan eRPH</a>
-</section>
+</div>
+</nav>
 
 
-<!-- KELEBIHAN -->
-<section class="container">
+<!-- HERO -->
+<section class="hero" id="utama">
 
-    <h2 class="section-title">
-        ✨ Kenapa Pilih eRPH UNAR?
-    </h2>
+<div class="hero-container">
 
-    <div class="features">
+    <div>
 
-        <div class="card">
-            <h3>📝 Mudah Digunakan</h3>
-            <p>
-                Antara muka yang ringkas dan mesra guru.
-            </p>
-        </div>
+        <h1>eRPH UNAR</h1>
 
-        <div class="card">
-            <h3>⚡ Jimat Masa</h3>
-            <p>
-                Membantu guru menyediakan RPH dengan lebih pantas.
-            </p>
-        </div>
+        <h2>Sistem eRPH Digital untuk Guru</h2>
 
-        <div class="card">
-            <h3>📱 Digital</h3>
-            <p>
-                Boleh digunakan melalui komputer, tablet dan telefon.
-            </p>
-        </div>
+        <p>
+            Lebih mudah • Lebih pantas • Lebih tersusun
+        </p>
 
-        <div class="card">
-            <h3>📂 Tersusun</h3>
-            <p>
-                Pengurusan RPH menjadi lebih kemas dan sistematik.
-            </p>
+        <ul class="hero-list">
+            <li>Sediakan RPH dengan lebih cepat</li>
+            <li>Urus RPH secara sistematik</li>
+            <li>Akses melalui komputer dan telefon</li>
+        </ul>
+
+        <a href="#demo" class="btn btn-white">
+            🚀 Lihat Demo
+        </a>
+
+        <a href="#pakej" class="btn btn-yellow">
+            📦 Dapatkan eRPH
+        </a>
+
+    </div>
+
+
+    <div class="hero-screen">
+
+        <div class="dashboard">
+
+            <div class="dashboard-top">
+                📊 Dashboard eRPH UNAR
+            </div>
+
+            <div class="dashboard-body">
+
+                <div class="dashboard-cards">
+
+                    <div class="dashboard-card">
+                        <strong>5</strong>
+                        RPH Hari Ini
+                    </div>
+
+                    <div class="dashboard-card">
+                        <strong>28</strong>
+                        RPH Disimpan
+                    </div>
+
+                    <div class="dashboard-card">
+                        <strong>9</strong>
+                        Kelas
+                    </div>
+
+                </div>
+
+                <br>
+
+                <div class="dashboard-card">
+                    📚 Pengurusan RPH<br>
+                    <strong>✓</strong>
+                    Lebih tersusun
+                </div>
+
+            </div>
+
         </div>
 
     </div>
 
+</div>
+
 </section>
 
 
-<!-- TENTANG eRPH -->
-<section class="container">
+<!-- CIRI -->
+<section class="container" id="ciri">
 
-    <h2 class="section-title">
-        📘 Tentang eRPH UNAR
-    </h2>
+<h2 class="section-title">
+    ✨ Kenapa Pilih eRPH UNAR?
+</h2>
+
+<p class="section-subtitle">
+    Dibangunkan untuk membantu guru mengurus RPH
+    dengan lebih mudah, pantas dan sistematik.
+</p>
+
+
+<div class="features">
 
     <div class="card">
+        <div class="icon">👍</div>
+        <h3>Mudah Digunakan</h3>
+        <p>
+            Antara muka yang ringkas dan mesra guru.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <div class="icon">⚡</div>
+        <h3>Jimat Masa</h3>
+        <p>
+            Membantu guru menyediakan RPH dengan lebih pantas.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <div class="icon">📱</div>
+        <h3>Digital</h3>
+        <p>
+            Boleh digunakan melalui komputer, tablet dan telefon.
+        </p>
+    </div>
+
+
+    <div class="card">
+        <div class="icon">📂</div>
+        <h3>Tersusun</h3>
+        <p>
+            Pengurusan RPH lebih kemas dan sistematik.
+        </p>
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- TENTANG -->
+<section class="about">
+
+<div class="container">
+
+<div class="about-box">
+
+    <div class="about-text">
+
+        <h2>📘 Tentang eRPH UNAR</h2>
 
         <p>
-            eRPH UNAR dibangunkan untuk membantu guru mengurus
-            Rancangan Pengajaran Harian secara lebih mudah,
-            cepat dan tersusun.
+            eRPH UNAR dibangunkan untuk membantu guru
+            mengurus Rancangan Pengajaran Harian secara
+            lebih mudah, cepat dan tersusun.
         </p>
 
         <p>
-            Sesuai digunakan oleh guru yang ingin beralih
-            kepada pengurusan RPH secara digital.
+            Sistem ini sesuai untuk guru yang ingin
+            menggunakan kaedah pengurusan RPH secara digital.
+        </p>
+
+        <p>
+            Fokus kepada kemudahan penggunaan dan
+            pengurusan RPH yang lebih sistematik.
         </p>
 
     </div>
+
+
+    <div class="about-image">
+        💻
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DEMO -->
+<section class="container demo" id="demo">
+
+<h2 class="section-title">
+    🎥 Demo eRPH UNAR
+</h2>
+
+<p class="section-subtitle">
+    Lihat bagaimana eRPH UNAR membantu memudahkan
+    pengurusan RPH guru.
+</p>
+
+
+<div class="demo-box">
+
+    <div class="play">▶</div>
+
+    <h2>Video Demo eRPH</h2>
+
+    <p>
+        Pautan video demo boleh dimasukkan di sini.
+    </p>
+
+    <br>
+
+    <a href="LINK_VIDEO_ANDA" class="btn btn-white">
+        ▶ Tonton Demo
+    </a>
+
+</div>
 
 </section>
 
 
 <!-- PAKEJ -->
-<section class="price">
+<section class="price-section" id="pakej">
 
-    <h2>eRPH UNAR</h2>
+<div class="container">
 
-    <p>
-        Sistem RPH digital untuk memudahkan urusan guru.
-    </p>
+<h2 class="section-title">
+    💰 Pakej eRPH UNAR
+</h2>
 
-    <a href="#" class="btn">
-        📲 Dapatkan Sekarang
-    </a>
+<p class="section-subtitle">
+    Pilih pakej yang sesuai dengan keperluan anda.
+</p>
+
+
+<div class="pricing">
+
+
+    <div class="price-card">
+
+        <h3>Pakej Basic</h3>
+
+        <p>Untuk Guru Individu</p>
+
+        <div class="price">
+            RM30
+        </div>
+
+        <small>/tahun</small>
+
+        <ul class="price-list">
+            <li>Akses sistem</li>
+            <li>Sokongan asas</li>
+            <li>Kemas kini sistem</li>
+            <li>1 pengguna</li>
+        </ul>
+
+        <a href="LINK_TELEGRAM_ANDA" class="btn btn-white">
+            Pilih Pakej
+        </a>
+
+    </div>
+
+
+    <div class="price-card popular">
+
+        <span class="badge">
+            POPULAR
+        </span>
+
+        <h3>Pakej Pro</h3>
+
+        <p>Untuk Guru & Panitia</p>
+
+        <div class="price">
+            RM60
+        </div>
+
+        <small>/tahun</small>
+
+        <ul class="price-list">
+            <li>Akses sistem</li>
+            <li>Sokongan keutamaan</li>
+            <li>Kemas kini sistem</li>
+            <li>Pengguna tanpa had</li>
+        </ul>
+
+        <a href="LINK_TELEGRAM_ANDA" class="btn btn-yellow">
+            Pilih Pakej
+        </a>
+
+    </div>
+
+
+    <div class="price-card">
+
+        <h3>Pakej Sekolah</h3>
+
+        <p>Untuk Institusi</p>
+
+        <div class="price">
+            RM200
+        </div>
+
+        <small>/tahun</small>
+
+        <ul class="price-list">
+            <li>Akses sistem</li>
+            <li>Sokongan premium</li>
+            <li>Kemas kini sistem</li>
+            <li>Pengguna tanpa had</li>
+        </ul>
+
+        <a href="LINK_TELEGRAM_ANDA" class="btn btn-white">
+            Hubungi Kami
+        </a>
+
+    </div>
+
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- HUBUNGI -->
-<section class="container contact">
+<!-- TESTIMONI -->
+<section class="container" id="testimoni">
 
-    <h2 class="section-title">
-        📞 Hubungi Kami
-    </h2>
+<h2 class="section-title">
+    ⭐ Apa Kata Guru?
+</h2>
 
-    <p>
-        Ingin mengetahui lebih lanjut tentang eRPH UNAR?
-    </p>
+<p class="section-subtitle">
+    Pengalaman pengguna eRPH UNAR.
+</p>
 
-    <a href="LINK_TELEGRAM_ANDA" class="btn">
-        📲 Telegram
-    </a>
+
+<div class="testimonials">
+
+
+    <div class="testimonial">
+
+        <div class="quote">“</div>
+
+        <p>
+            eRPH UNAR sangat membantu saya menyediakan
+            RPH dengan lebih cepat dan tersusun.
+        </p>
+
+        <strong>
+            Guru Pendidikan Islam
+        </strong>
+
+    </div>
+
+
+    <div class="testimonial">
+
+        <div class="quote">“</div>
+
+        <p>
+            Sistem yang praktikal dan mudah digunakan.
+            Sangat membantu dalam pengurusan RPH.
+        </p>
+
+        <strong>
+            Guru Sekolah Menengah
+        </strong>
+
+    </div>
+
+
+    <div class="testimonial">
+
+        <div class="quote">“</div>
+
+        <p>
+            Pengurusan RPH menjadi lebih sistematik
+            dan mudah dicapai apabila diperlukan.
+        </p>
+
+        <strong>
+            Guru
+        </strong>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="cta" id="hubungi">
+
+<h2>
+    Berminat dengan eRPH UNAR?
+</h2>
+
+<p>
+    Hubungi kami untuk maklumat lanjut
+    atau mendapatkan akses sistem.
+</p>
+
+<a href="LINK_TELEGRAM_ANDA" class="btn btn-yellow">
+    📲 Hubungi Kami di Telegram
+</a>
 
 </section>
 
@@ -223,7 +970,53 @@ footer {
 <!-- FOOTER -->
 <footer>
 
-    © 2026 eRPH UNAR | Digital Teacher Tools
+<div class="footer-container">
+
+    <div>
+
+        <div class="footer-title">
+            📘 eRPH UNAR
+        </div>
+
+        <p>
+            Sistem eRPH Digital untuk Guru
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <strong>Pautan Pantas</strong>
+
+        <a href="#utama">Utama</a>
+        <a href="#ciri">Ciri Utama</a>
+        <a href="#demo">Demo</a>
+        <a href="#pakej">Pakej</a>
+
+    </div>
+
+
+    <div>
+
+        <strong>Hubungi Kami</strong>
+
+        <a href="LINK_TELEGRAM_ANDA">
+            📲 Telegram
+        </a>
+
+        <p>
+            Sokongan & Pertanyaan
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="copyright">
+    © 2026 eRPH UNAR. Semua Hak Cipta Terpelihara.
+</div>
 
 </footer>
 
