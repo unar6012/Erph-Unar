@@ -1,750 +1,897 @@
-```html
 <!DOCTYPE html>
 <html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>eRPH UNAR | Sistem eRPH Digital untuk Guru</title>
 
 <style>
 :root{
---green:#047857;
---green2:#059669;
---emerald:#10b981;
---dark:#064e3b;
---gold:#f4c542;
---text:#17352d;
---muted:#64746e;
---border:#d8eee5;
+    --green:#047857;
+    --green2:#059669;
+    --emerald:#10b981;
+    --dark:#064e3b;
+    --gold:#f4c542;
+    --text:#17352d;
+    --muted:#64746e;
+    --border:#d8eee5;
+    --light:#ecfdf5;
+    --white:#fff;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
 
 body{
-font-family:Arial,Helvetica,sans-serif;
-color:var(--text);
-line-height:1.6;
-background:#f8fbfa
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--text);
+    line-height:1.6;
+    background:#f8fbfa;
 }
 
-a{text-decoration:none}
-.container{width:min(1120px,92%);margin:auto}
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:min(1100px,92%);
+    margin:auto;
+}
+
+/* NAVBAR */
 
 .navbar{
-position:sticky;
-top:0;
-z-index:1000;
-background:rgba(255,255,255,.96);
-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border)
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid var(--border);
 }
 
 .nav{
-min-height:68px;
-display:flex;
-align-items:center;
-justify-content:space-between
+    min-height:68px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-display:flex;
-align-items:center;
-gap:9px;
-color:var(--dark);
-font-size:20px;
-font-weight:800
+    display:flex;
+    align-items:center;
+    gap:9px;
+    color:var(--dark);
+    font-size:20px;
+    font-weight:800;
 }
 
 .logo-icon{
-width:40px;
-height:40px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:white;
-border-radius:12px;
-background:linear-gradient(135deg,var(--green),var(--emerald))
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    border-radius:12px;
+    background:linear-gradient(135deg,var(--green),var(--emerald));
 }
 
 .menu{
-display:flex;
-align-items:center;
-gap:17px
+    display:flex;
+    gap:18px;
+    align-items:center;
 }
 
 .menu a{
-color:#52635d;
-font-size:13px;
-font-weight:600
+    color:#52635d;
+    font-size:13px;
+    font-weight:600;
+}
+
+.menu a:hover{
+    color:var(--green);
 }
 
 .menu .telegram{
-color:white;
-background:var(--green);
-padding:9px 15px;
-border-radius:22px
+    color:white;
+    padding:9px 16px;
+    border-radius:20px;
+    background:linear-gradient(135deg,var(--green),var(--emerald));
 }
 
 /* HERO */
 
 .hero{
-color:white;
-background:
-radial-gradient(circle at 85% 15%,rgba(110,231,183,.25),transparent 30%),
-linear-gradient(135deg,#064e3b,#047857,#059669)
+    color:white;
+    background:
+        radial-gradient(circle at 85% 15%,rgba(110,231,183,.25),transparent 30%),
+        linear-gradient(135deg,#064e3b,#047857,#059669);
 }
 
 .hero-inner{
-min-height:590px;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:45px;
-align-items:center;
-padding:65px 0
+    min-height:600px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+    padding:65px 0;
 }
 
 .badge{
-display:inline-block;
-padding:7px 13px;
-border:1px solid rgba(255,255,255,.25);
-background:rgba(255,255,255,.1);
-border-radius:20px;
-font-size:11px;
-font-weight:bold;
-letter-spacing:1px;
-margin-bottom:18px
+    display:inline-block;
+    padding:7px 14px;
+    margin-bottom:18px;
+    border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.10);
+    border-radius:20px;
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
 .hero h1{
-font-size:clamp(48px,6vw,72px);
-line-height:1;
-margin-bottom:18px
+    font-size:clamp(48px,6vw,72px);
+    line-height:1;
+    margin-bottom:18px;
 }
 
-.hero h1 span{color:#a7f3d0}
+.hero h1 span{
+    color:#a7f3d0;
+}
 
 .hero h2{
-font-size:23px;
-font-weight:500;
-margin-bottom:15px
+    font-size:23px;
+    font-weight:500;
+    margin-bottom:15px;
 }
 
 .hero-text{
-max-width:560px;
-color:#e4f8ef;
-font-size:16px;
-margin-bottom:23px
+    max-width:560px;
+    color:#e4f8ef;
+    font-size:17px;
+    margin-bottom:24px;
 }
 
 .hero-buttons{
-display:flex;
-flex-wrap:wrap;
-gap:10px
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
 }
 
 .btn{
-display:inline-flex;
-align-items:center;
-justify-content:center;
-gap:6px;
-padding:12px 19px;
-border-radius:11px;
-font-weight:bold;
-cursor:pointer;
-border:0;
-transition:.2s
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+    padding:12px 20px;
+    border-radius:11px;
+    border:none;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
 }
 
-.btn:hover{transform:translateY(-2px)}
+.btn:hover{
+    transform:translateY(-2px);
+}
 
 .btn-green{
-color:white;
-background:linear-gradient(135deg,var(--green),var(--emerald))
+    color:white;
+    background:linear-gradient(135deg,var(--green),var(--emerald));
 }
 
 .btn-gold{
-color:#23352e;
-background:var(--gold)
+    color:#23352e;
+    background:var(--gold);
 }
 
 .btn-white{
-color:var(--green);
-background:white
+    color:var(--green);
+    background:white;
 }
 
 .hero-points{
-display:flex;
-flex-wrap:wrap;
-gap:13px;
-margin-top:23px;
-color:#d9f9eb;
-font-size:12px
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+    margin-top:24px;
+    color:#d9f9eb;
+    font-size:12px;
 }
 
 /* VIDEO */
 
 .promo-video{
-padding:12px;
-background:white;
-border-radius:22px;
-box-shadow:0 25px 60px rgba(0,50,35,.3)
+    padding:12px;
+    background:white;
+    border-radius:22px;
+    box-shadow:0 25px 60px rgba(0,60,40,.28);
 }
 
-.promo-title{
-color:var(--dark);
-font-size:13px;
-font-weight:bold;
-padding:7px 8px 11px
+.promo-video-title{
+    padding:7px 7px 12px;
+    color:var(--dark);
+    font-size:13px;
+    font-weight:bold;
 }
 
 .youtube-box{
-position:relative;
-aspect-ratio:16/9;
-overflow:hidden;
-border-radius:15px;
-background:#061a14
+    position:relative;
+    width:100%;
+    aspect-ratio:16/9;
+    overflow:hidden;
+    border-radius:15px;
+    background:#061a14;
 }
 
 .youtube-box iframe{
-position:absolute;
-width:100%;
-height:100%;
-border:0
+    position:absolute;
+    width:100%;
+    height:100%;
+    border:0;
 }
 
 .video-caption{
-color:var(--muted);
-font-size:11px;
-text-align:center;
-padding:10px
+    color:var(--muted);
+    font-size:11px;
+    text-align:center;
+    padding:10px 5px 3px;
+}
+
+/* TRUST */
+
+.trust{
+    background:white;
+    border-bottom:1px solid var(--border);
+}
+
+.trust-inner{
+    min-height:65px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:25px;
+}
+
+.trust-item{
+    color:#64746e;
+    font-size:12px;
+    font-weight:bold;
 }
 
 /* SECTION */
 
-.section{padding:70px 0}
+.section{
+    padding:70px 0;
+}
 
 .soft{
-background:linear-gradient(135deg,#f0fdf8,#ecfdf5)
+    background:
+        radial-gradient(circle at 10% 10%,rgba(16,185,129,.10),transparent 25%),
+        linear-gradient(135deg,#f0fdf8,#ecfdf5);
 }
 
 .heading{
-max-width:700px;
-text-align:center;
-margin:0 auto 38px
+    max-width:680px;
+    text-align:center;
+    margin:0 auto 35px;
 }
 
 .eyebrow{
-color:var(--green);
-font-size:11px;
-font-weight:800;
-letter-spacing:1.4px
+    color:var(--green);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:1.5px;
 }
 
 .heading h2{
-font-size:36px;
-line-height:1.15;
-margin:8px 0 12px
+    font-size:36px;
+    line-height:1.15;
+    margin:8px 0 12px;
 }
 
 .heading p{
-color:var(--muted);
-font-size:14px
+    color:var(--muted);
+    font-size:14px;
 }
 
-/* KELEBIHAN */
+/* FEATURES */
 
 .features{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:16px
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
 }
 
 .feature{
-padding:23px;
-background:white;
-border:1px solid var(--border);
-border-radius:18px;
-box-shadow:0 7px 20px rgba(5,150,105,.05)
+    padding:24px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:18px;
+    box-shadow:0 7px 20px rgba(5,150,105,.05);
 }
 
 .feature-icon{
-font-size:25px;
-margin-bottom:12px
+    width:48px;
+    height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:14px;
+    border-radius:13px;
+    background:#dff8ed;
+    font-size:22px;
 }
 
 .feature h3{
-font-size:16px;
-margin-bottom:6px
+    font-size:17px;
+    margin-bottom:6px;
 }
 
 .feature p{
-color:var(--muted);
-font-size:13px
+    color:var(--muted);
+    font-size:13px;
+}
+
+/* UNTUK GURU */
+
+.teacher-benefit-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.teacher-benefit{
+    padding:25px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:19px;
+    box-shadow:0 8px 22px rgba(5,150,105,.06);
+}
+
+.teacher-benefit-icon{
+    width:50px;
+    height:50px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:14px;
+    border-radius:14px;
+    background:#dff8ed;
+    font-size:23px;
+}
+
+.teacher-benefit h3{
+    font-size:17px;
+    margin-bottom:7px;
+}
+
+.teacher-benefit p{
+    color:var(--muted);
+    font-size:13px;
+}
+
+.teacher-highlight{
+    margin-top:28px;
+    padding:22px;
+    color:white;
+    text-align:center;
+    border-radius:18px;
+    background:linear-gradient(135deg,#047857,#10b981);
+}
+
+.teacher-highlight strong{
+    font-size:18px;
+}
+
+.teacher-highlight p{
+    color:#dff9ed;
+    font-size:13px;
+    margin-top:5px;
 }
 
 /* DEMO */
 
 .demo-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
 .demo-card{
-padding:27px;
-background:white;
-border:1px solid var(--border);
-border-radius:20px
+    padding:28px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:20px;
 }
 
 .demo-label{
-color:var(--green);
-font-size:11px;
-font-weight:bold;
-letter-spacing:1px
+    color:var(--green);
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
 .demo-card h3{
-font-size:21px;
-margin:7px 0
+    font-size:21px;
+    margin:7px 0;
 }
 
 .demo-card p{
-color:var(--muted);
-font-size:13px;
-margin-bottom:17px
+    color:var(--muted);
+    font-size:13px;
+    margin-bottom:17px;
 }
 
 /* PANDUAN */
 
 .video-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
 }
 
 .video{
-display:flex;
-align-items:center;
-gap:12px;
-padding:14px;
-background:white;
-border:1px solid var(--border);
-border-radius:14px
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:14px;
 }
 
 .video-number{
-width:35px;
-height:35px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:10px;
-background:#dff8ed;
-color:var(--green);
-font-weight:bold;
-font-size:12px
+    width:35px;
+    height:35px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:#dff8ed;
+    color:var(--green);
+    font-weight:bold;
+    font-size:12px;
 }
 
 .video-title{
-flex:1;
-font-size:13px;
-font-weight:bold
+    flex:1;
+    font-size:13px;
+    font-weight:bold;
 }
 
 .play{
-width:35px;
-height:35px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:var(--green);
-color:white
+    width:35px;
+    height:35px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--green);
+    color:white;
 }
 
 /* HARGA */
 
+.price-section{
+    background:#f8fbfa;
+}
+
 .price-box{
-max-width:650px;
-margin:auto;
-padding:38px;
-color:white;
-text-align:center;
-border-radius:25px;
-background:linear-gradient(145deg,#064e3b,#047857,#059669);
-box-shadow:0 20px 45px rgba(5,150,105,.18)
+    max-width:650px;
+    margin:auto;
+    padding:38px 30px;
+    color:white;
+    text-align:center;
+    border-radius:25px;
+    background:linear-gradient(145deg,#064e3b,#047857,#059669);
 }
 
 .price-label{
-font-size:11px;
-font-weight:bold;
-letter-spacing:1px
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
 }
 
 .price{
-color:#ffe06b;
-font-size:64px;
-font-weight:900;
-line-height:1;
-margin:12px 0
+    color:#ffe06b;
+    font-size:60px;
+    font-weight:900;
+    line-height:1;
+    margin:12px 0;
 }
 
-.price-sub{color:#d8f8eb}
+.price-sub{
+    color:#d8f8eb;
+    font-size:13px;
+}
 
 .price-list{
-max-width:400px;
-margin:22px auto;
-text-align:left;
-list-style:none;
-font-size:13px
+    max-width:420px;
+    margin:22px auto;
+    text-align:left;
+    list-style:none;
+    font-size:13px;
 }
 
 .price-list li{
-padding:6px 0;
-border-bottom:1px solid rgba(255,255,255,.12)
+    padding:6px 0;
+    border-bottom:1px solid rgba(255,255,255,.12);
 }
 
-.price-list li:before{
-content:"✓";
-color:#ffe06b;
-font-weight:bold;
-margin-right:8px
+.price-list li::before{
+    content:"✓";
+    color:#ffe06b;
+    font-weight:bold;
+    margin-right:8px;
 }
 
 /* PAKEJ */
 
-.package-box{margin-bottom:30px}
+.package-box{
+    margin-bottom:30px;
+}
 
 .package-header{
-padding:17px 21px;
-margin-bottom:15px;
-color:white;
-font-size:18px;
-font-weight:bold;
-border-radius:16px;
-background:linear-gradient(135deg,#047857,#10b981)
+    padding:17px 20px;
+    margin-bottom:15px;
+    color:white;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:16px;
+    background:linear-gradient(135deg,#047857,#10b981);
 }
 
 .package-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
 }
 
 .package-row{
-padding:19px;
-background:white;
-border:1px solid #d4eee3;
-border-radius:17px;
-box-shadow:0 6px 18px rgba(5,150,105,.05)
+    min-height:135px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding:18px;
+    background:white;
+    border:1px solid #d4eee3;
+    border-radius:16px;
 }
 
 .package-name{
-font-size:15px;
-font-weight:700;
-margin-bottom:10px
+    font-size:15px;
+    font-weight:bold;
 }
 
-.package-name:before{
-content:"📦";
-margin-right:6px
+.package-name::before{
+    content:"📦";
+    margin-right:6px;
 }
 
 .view-btn{
-padding:8px 13px;
-color:var(--green);
-background:#ecfdf5;
-border:1px solid #a7f3d0;
-border-radius:18px;
-font-size:12px;
-font-weight:bold;
-cursor:pointer
+    padding:8px 13px;
+    color:var(--green);
+    background:var(--light);
+    border:1px solid #a7f3d0;
+    border-radius:18px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:12px;
 }
 
 .hidden-price{
-display:none;
-margin:8px 0
+    display:none;
+    margin-top:7px;
 }
 
-.hidden-price.show{display:block}
+.hidden-price.show{
+    display:block;
+}
 
 .hidden-price strong{
-display:block;
-color:var(--green);
-font-size:22px;
-margin-bottom:7px
+    display:block;
+    color:var(--green);
+    font-size:21px;
+    margin-bottom:6px;
 }
 
 .pay-btn{
-display:inline-block;
-padding:8px 12px;
-color:white;
-background:linear-gradient(135deg,#047857,#10b981);
-border-radius:18px;
-font-size:11px;
-font-weight:bold
-}
-
-.order-warning{
-margin-top:12px;
-padding:12px;
-color:#7a5a00;
-background:#fff8d9;
-border:1px solid #f4df8b;
-border-radius:12px;
-font-size:11px;
-line-height:1.5
-}
-
-.order-warning strong{
-display:block;
-color:#9a6900;
-margin-bottom:3px
-}
-
-.form-btn{
-display:inline-block;
-margin-top:8px;
-padding:7px 11px;
-color:white;
-background:#047857;
-border-radius:17px;
-font-size:11px;
-font-weight:bold
+    display:inline-block;
+    padding:8px 12px;
+    color:white;
+    background:linear-gradient(135deg,#047857,#10b981);
+    border-radius:18px;
+    font-size:11px;
+    font-weight:bold;
 }
 
 .package-note{
-padding:15px;
-color:#52635d;
-background:#fff9df;
-border-radius:13px;
-font-size:12px;
-margin-top:15px
+    padding:15px;
+    margin-top:15px;
+    color:#52635d;
+    background:#fff9df;
+    border-radius:13px;
+    font-size:12px;
+}
+
+/* SUBJECT */
+
+.subject-section{
+    background:
+        radial-gradient(circle at 15% 20%,rgba(16,185,129,.12),transparent 25%),
+        linear-gradient(135deg,#ecfdf5,#f7fffb);
+}
+
+.subjects{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+.subject{
+    padding:9px 14px;
+    color:#52635d;
+    background:white;
+    border:1px solid #cfece0;
+    border-radius:25px;
+    font-size:12px;
 }
 
 /* TEMPAHAN */
 
 .order-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:20px
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
 }
 
 .order-card{
-padding:27px;
-background:white;
-border:1px solid var(--border);
-border-radius:20px
+    padding:27px;
+    background:white;
+    border:1px solid var(--border);
+    border-radius:20px;
 }
 
-.steps{
-display:grid;
-gap:17px
+/* ALERT BORANG */
+
+.order-alert{
+    padding:18px;
+    margin-bottom:20px;
+    color:#78350f;
+    background:#fff7d6;
+    border:2px solid #f4c542;
+    border-radius:15px;
+    text-align:center;
+}
+
+.order-alert strong{
+    display:block;
+    font-size:17px;
+    color:#92400e;
+    margin-bottom:5px;
+}
+
+.order-alert p{
+    font-size:13px;
 }
 
 .step{
-display:flex;
-gap:13px
+    display:flex;
+    gap:13px;
+    margin:18px 0;
 }
 
 .step-number{
-width:35px;
-height:35px;
-min-width:35px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-color:white;
-background:var(--green);
-font-weight:bold
+    width:36px;
+    height:36px;
+    min-width:36px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    color:white;
+    background:var(--green);
+    font-weight:bold;
 }
 
 .step p{
-color:var(--muted);
-font-size:13px
+    color:var(--muted);
+    font-size:13px;
 }
 
-.order-card h3{margin-bottom:10px}
+/* CONTACT */
 
-.order-card p{
-color:var(--muted);
-font-size:13px
+.contact-box{
+    margin-top:18px;
+    padding:18px;
+    background:#f0fdf8;
+    border-radius:15px;
 }
 
-/* TELEGRAM */
-
-.telegram-box{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:18px
+.contact-box a{
+    display:block;
+    padding:7px 0;
+    color:var(--green);
+    font-weight:bold;
+    font-size:13px;
 }
 
 /* CTA */
 
 .cta{
-padding:65px 0;
-color:white;
-text-align:center;
-background:linear-gradient(135deg,#064e3b,#047857,#059669)
+    padding:70px 0;
+    color:white;
+    text-align:center;
+    background:linear-gradient(135deg,#064e3b,#047857,#059669);
 }
 
 .cta h2{
-font-size:37px;
-margin-bottom:10px
+    font-size:38px;
+    margin-bottom:10px;
 }
 
 .cta p{
-color:#d8f8eb;
-margin-bottom:20px
-}
-
-.cta-buttons{
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:10px
+    color:#d8f8eb;
+    margin-bottom:22px;
 }
 
 /* FOOTER */
 
 footer{
-padding:35px 0 18px;
-color:white;
-background:#032e23
+    padding:40px 0 18px;
+    color:white;
+    background:#032e23;
 }
 
 .footer-grid{
-display:grid;
-grid-template-columns:2fr 1fr 1fr;
-gap:30px
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:30px;
 }
 
 .footer-title{
-font-size:21px;
-font-weight:bold;
-margin-bottom:7px
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:7px;
 }
 
-footer p,footer a{
-color:#bce7d6;
-font-size:13px
+footer p,
+footer a{
+    color:#bce7d6;
+    font-size:13px;
 }
 
 footer a{
-display:block;
-margin:6px 0
+    display:block;
+    margin:6px 0;
 }
 
 .copyright{
-padding-top:17px;
-margin-top:25px;
-border-top:1px solid rgba(255,255,255,.1);
-text-align:center;
-color:#7db9a2;
-font-size:11px
+    padding-top:18px;
+    margin-top:28px;
+    color:#7db9a2;
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+    font-size:11px;
 }
 
-/* RESPONSIVE */
+/* TABLET */
 
 @media(max-width:900px){
 
-.menu{display:none}
+    .menu{
+        display:none;
+    }
 
-.hero-inner{
-grid-template-columns:1fr;
-text-align:center
+    .hero-inner{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero-text{
+        margin:auto auto 24px;
+    }
+
+    .hero-buttons,
+    .hero-points{
+        justify-content:center;
+    }
+
+    .features,
+    .teacher-benefit-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .package-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
 }
 
-.hero-text{
-margin-left:auto;
-margin-right:auto
-}
-
-.hero-buttons,.hero-points{
-justify-content:center
-}
-
-.features{
-grid-template-columns:1fr 1fr
-}
-
-.package-grid{
-grid-template-columns:1fr 1fr
-}
-
-.footer-grid{
-grid-template-columns:1fr
-}
-}
+/* PHONE */
 
 @media(max-width:600px){
 
-.hero-inner{
-padding:50px 0
+    .hero-inner{
+        padding:50px 0;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .hero h2{
+        font-size:20px;
+    }
+
+    .hero-text{
+        font-size:15px;
+    }
+
+    .features,
+    .teacher-benefit-grid,
+    .demo-grid,
+    .video-grid,
+    .order-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:55px 0;
+    }
+
+    .heading h2{
+        font-size:30px;
+    }
+
+    .package-grid{
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+    }
+
+    .package-row{
+        min-height:135px;
+        padding:15px;
+    }
+
+    .package-name{
+        font-size:14px;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+    .cta h2{
+        font-size:30px;
+    }
 }
 
-.hero h1{font-size:48px}
-.hero h2{font-size:20px}
-
-.section{padding:55px 0}
-
-.heading h2{font-size:30px}
-
-.features,
-.demo-grid,
-.video-grid,
-.order-grid{
-grid-template-columns:1fr
-}
-
-.package-grid{
-grid-template-columns:1fr 1fr;
-gap:10px
-}
-
-.package-row{
-padding:15px
-}
-
-.package-name{
-font-size:14px
-}
-
-.price-box{
-padding:30px 18px
-}
-
-.price{
-font-size:53px
-}
-
-.btn{
-width:100%
-}
-
-.cta h2{
-font-size:30px
-}
-
-.telegram-box{
-flex-direction:column
-}
-}
+/* PHONE KECIL */
 
 @media(max-width:400px){
 
-.package-grid{
-grid-template-columns:1fr
-}
-
+    .package-grid{
+        grid-template-columns:1fr;
+    }
 }
 </style>
 </head>
 
 <body>
+
+<!-- NAVBAR -->
 
 <header class="navbar">
 <div class="container nav">
@@ -755,6 +902,7 @@ grid-template-columns:1fr
 </a>
 
 <nav class="menu">
+
 <a href="#kelebihan">Kelebihan</a>
 <a href="#demo">Demo</a>
 <a href="#panduan">Panduan</a>
@@ -764,13 +912,7 @@ grid-template-columns:1fr
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank"
 class="telegram">
-📢 Channel
-</a>
-
-<a href="https://t.me/+yNVyX1s8Xg02YjQ9"
-target="_blank"
-class="telegram">
-💬 Chat
+Telegram
 </a>
 
 </nav>
@@ -779,38 +921,39 @@ class="telegram">
 </header>
 
 
+<!-- HERO -->
+
 <section class="hero" id="utama">
 
 <div class="container hero-inner">
 
 <div>
 
-<div class="badge">eRPH DIGITAL UNTUK GURU</div>
+<div class="badge">
+eRPH DIGITAL UNTUK GURU
+</div>
 
-<h1>eRPH <span>UNAR</span></h1>
+<h1>
+eRPH <span>UNAR</span>
+</h1>
 
-<h2>RPH lebih mudah, cepat & tersusun.</h2>
+<h2>
+RPH lebih mudah, cepat & tersusun.
+</h2>
 
 <p class="hero-text">
-eRPH berasaskan spreadsheet online untuk membantu guru sekolah menengah mengurus RPH dengan lebih sistematik.
+Template eRPH berasaskan spreadsheet online
+untuk guru Sekolah Menengah.
 </p>
 
 <div class="hero-buttons">
 
-<a href="#demo" class="btn btn-gold">
-Lihat Demo →
+<a href="#pakej" class="btn btn-gold">
+🛒 Lihat Pakej
 </a>
 
-<a href="https://t.me/Edu_UNARCHANNEL"
-target="_blank"
-class="btn btn-white">
-📢 Telegram Channel
-</a>
-
-<a href="https://t.me/+yNVyX1s8Xg02YjQ9"
-target="_blank"
-class="btn btn-white">
-💬 Telegram Chat
+<a href="#demo" class="btn btn-white">
+▶ Demo
 </a>
 
 </div>
@@ -818,7 +961,7 @@ class="btn btn-white">
 <div class="hero-points">
 <span>✓ RPT Setahun</span>
 <span>✓ Auto + Edit</span>
-<span>✓ Autosave</span>
+<span>✓ Online</span>
 <span>✓ Boleh Print</span>
 </div>
 
@@ -827,7 +970,9 @@ class="btn btn-white">
 
 <div class="promo-video">
 
-<div class="promo-title">▶ VIDEO eRPH UNAR</div>
+<div class="promo-video-title">
+▶ VIDEO eRPH UNAR
+</div>
 
 <div class="youtube-box">
 
@@ -841,7 +986,172 @@ allowfullscreen>
 </div>
 
 <p class="video-caption">
-Kenali eRPH UNAR dan lihat cara ia memudahkan pengurusan RPH.
+Lihat bagaimana eRPH UNAR membantu memudahkan pengurusan RPH.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TRUST -->
+
+<section class="trust">
+
+<div class="container trust-inner">
+
+<span class="trust-item">✓ Spreadsheet Online</span>
+<span class="trust-item">✓ RPT Setahun</span>
+<span class="trust-item">✓ Auto + Edit</span>
+<span class="trust-item">✓ Google Classroom</span>
+<span class="trust-item">✓ Print Terus</span>
+
+</div>
+
+</section>
+
+
+<!-- KELEBIHAN -->
+
+<section class="section" id="kelebihan">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+KENAPA eRPH UNAR?
+</div>
+
+<h2>
+Kerja RPH jadi lebih mudah.
+</h2>
+
+<p>
+Fungsi penting dalam satu sistem.
+</p>
+
+</div>
+
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">📅</div>
+<h3>Pilih Minggu</h3>
+<p>Pilih minggu yang diperlukan. RPH tersedia untuk setahun.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">📚</div>
+<h3>RPT Setahun</h3>
+<p>Data RPT disediakan untuk memudahkan pengisian.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">⚡</div>
+<h3>Auto + Edit</h3>
+<p>Gunakan Auto atau edit mengikut keperluan.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">📝</div>
+<h3>Dropdown</h3>
+<p>Catatan RPH lebih cepat dengan pilihan dropdown.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">☁️</div>
+<h3>Online</h3>
+<p>Boleh dicapai dan dikemaskini secara online.</p>
+</div>
+
+<div class="feature">
+<div class="feature-icon">🖨️</div>
+<h3>Print Terus</h3>
+<p>RPH boleh terus dicetak apabila diperlukan.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+
+<!-- UNTUK GURU -->
+
+<section class="section soft" id="guru">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+UNTUK GURU
+</div>
+
+<h2>
+Kurangkan masa mengurus RPH.
+</h2>
+
+<p>
+Lebih banyak masa untuk fokus kepada pengajaran.
+</p>
+
+</div>
+
+
+<div class="teacher-benefit-grid">
+
+<div class="teacher-benefit">
+<div class="teacher-benefit-icon">📅</div>
+<h3>Hanya Tukar Minggu</h3>
+<p>Pilih minggu dan gunakan RPT yang telah tersedia.</p>
+</div>
+
+<div class="teacher-benefit">
+<div class="teacher-benefit-icon">⚡</div>
+<h3>Auto Edit</h3>
+<p>Edit RPT terus dalam RPH dengan lebih cepat.</p>
+</div>
+
+<div class="teacher-benefit">
+<div class="teacher-benefit-icon">🎯</div>
+<h3>Fokus Pengajaran</h3>
+<p>Kurangkan masa mengurus RPH dan fokus kepada kelas.</p>
+</div>
+
+<div class="teacher-benefit">
+<div class="teacher-benefit-icon">☁️</div>
+<h3>RPH Online</h3>
+<p>Akses dan kemaskini RPH apabila diperlukan.</p>
+</div>
+
+<div class="teacher-benefit">
+<div class="teacher-benefit-icon">💾</div>
+<h3>Autosave</h3>
+<p>Perubahan disimpan secara automatik.</p>
+</div>
+
+<div class="teacher-benefit">
+<div class="teacher-benefit-icon">🗂️</div>
+<h3>Lebih Tersusun</h3>
+<p>RPH, RPT dan maklumat pengajaran lebih tersusun.</p>
+</div>
+
+</div>
+
+
+<div class="teacher-highlight">
+
+<strong>
+✨ RPH dah siap — guru boleh fokus kepada pengajaran.
+</strong>
+
+<p>
+Pilih minggu → semak → kemaskini → selesai.
 </p>
 
 </div>
@@ -850,74 +1160,44 @@ Kenali eRPH UNAR dan lihat cara ia memudahkan pengurusan RPH.
 </section>
 
 
-<section class="section" id="kelebihan">
+<!-- DEMO -->
+
+<section class="section" id="demo">
 
 <div class="container">
 
 <div class="heading">
 
-<div class="eyebrow">KENAPA eRPH UNAR?</div>
+<div class="eyebrow">
+DEMO
+</div>
 
-<h2>Semua yang guru perlukan.</h2>
+<h2>
+Cuba sendiri.
+</h2>
 
-<p>Ringkas, mudah dan terus kepada perkara penting.</p>
+<p>
+Lihat demo eRPH sebelum membuat tempahan.
+</p>
 
 </div>
 
-<div class="features">
-
-<div class="feature">
-<div class="feature-icon">📅</div>
-<h3>Pilih Minggu</h3>
-<p>Pilih minggu yang diperlukan. RPT dan tarikh telah tersedia.</p>
-</div>
-
-<div class="feature">
-<div class="feature-icon">⚡</div>
-<h3>Auto + Edit</h3>
-<p>Gunakan RPT secara automatik atau edit mengikut keperluan.</p>
-</div>
-
-<div class="feature">
-<div class="feature-icon">☁️</div>
-<h3>Online + Autosave</h3>
-<p>Boleh diakses online dan perubahan disimpan secara automatik.</p>
-</div>
-
-<div class="feature">
-<div class="feature-icon">🖨️</div>
-<h3>Terus Print</h3>
-<p>RPH yang siap boleh terus dicetak apabila diperlukan.</p>
-</div>
-
-</div>
-</div>
-</section>
-
-
-<section class="section soft" id="demo">
-
-<div class="container">
-
-<div class="heading">
-
-<div class="eyebrow">DEMO eRPH</div>
-
-<h2>Cuba sendiri.</h2>
-
-<p>Lihat bagaimana eRPH UNAR berfungsi.</p>
-
-</div>
 
 <div class="demo-grid">
 
 <div class="demo-card">
 
-<div class="demo-label">KUMPULAN A</div>
+<div class="demo-label">
+KUMPULAN A
+</div>
 
-<h3>Kedah · Kelantan · Terengganu</h3>
+<h3>
+Kedah · Kelantan · Terengganu
+</h3>
 
-<p>Demo eRPH Kumpulan A.</p>
+<p>
+Demo eRPH Kumpulan A.
+</p>
 
 <a href="https://docs.google.com/spreadsheets/d/1VbTlMoLrrpoahf57iCfiTukxcmcUpyjUvO52XphbBV8/edit?usp=drive_link"
 target="_blank"
@@ -930,12 +1210,18 @@ Buka Demo →
 
 <div class="demo-card">
 
-<div class="demo-label">KUMPULAN B</div>
+<div class="demo-label">
+KUMPULAN B
+</div>
 
-<h3>12 Negeri / Wilayah</h3>
+<h3>
+12 Negeri / Wilayah
+</h3>
 
 <p>
-Melaka, Negeri Sembilan, Pahang, Perak, Perlis, Pulau Pinang, Sabah, Sarawak, Selangor, Kuala Lumpur, Labuan & Putrajaya.
+Melaka, Negeri Sembilan, Pahang, Perak, Perlis,
+Pulau Pinang, Sabah, Sarawak, Selangor,
+Kuala Lumpur, Labuan & Putrajaya.
 </p>
 
 <a href="https://docs.google.com/spreadsheets/d/1W-jExr4N-YBO7huBZiQ4RRvfZA0KANSAssPIr1v_BlA/edit?usp=drive_link"
@@ -947,23 +1233,34 @@ Buka Demo →
 </div>
 
 </div>
+
 </div>
+
 </section>
 
 
-<section class="section" id="panduan">
+<!-- PANDUAN -->
+
+<section class="section soft" id="panduan">
 
 <div class="container">
 
 <div class="heading">
 
-<div class="eyebrow">PANDUAN</div>
+<div class="eyebrow">
+PANDUAN
+</div>
 
-<h2>Belajar dengan mudah.</h2>
+<h2>
+Belajar menggunakan eRPH.
+</h2>
 
-<p>Panduan video langkah demi langkah.</p>
+<p>
+Video panduan langkah demi langkah.
+</p>
 
 </div>
+
 
 <div class="video-grid">
 
@@ -975,7 +1272,7 @@ Buka Demo →
 
 <div class="video">
 <div class="video-number">02</div>
-<div class="video-title">Tetapan Awal Jadual Waktu</div>
+<div class="video-title">Tetapan Jadual, Kelas & Masa</div>
 <a href="https://youtu.be/t_KtM0m9-Pw" target="_blank" class="play">▶</a>
 </div>
 
@@ -1017,7 +1314,8 @@ Buka Demo →
 
 </div>
 
-<div style="text-align:center;margin-top:25px">
+
+<div style="text-align:center;margin-top:25px;">
 
 <a href="https://bit.ly/PanduanPDFErph"
 target="_blank"
@@ -1031,76 +1329,106 @@ class="btn btn-green">
 </section>
 
 
-<section class="section soft" id="harga">
+<!-- HARGA -->
+
+<section class="section price-section" id="harga">
 
 <div class="container">
 
 <div class="heading">
 
-<div class="eyebrow">HARGA</div>
+<div class="eyebrow">
+HARGA
+</div>
 
-<h2>Mulakan dari RM30.</h2>
+<h2>
+Bermula RM30.
+</h2>
 
-<p>Pilih pakej mengikut keperluan anda.</p>
+<p>
+Pilih pakej mengikut keperluan.
+</p>
 
 </div>
 
+
 <div class="price-box">
 
-<div class="price-label">HARGA BERMULA</div>
+<div class="price-label">
+HARGA BERMULA
+</div>
 
-<div class="price">RM30</div>
+<div class="price">
+RM30
+</div>
 
-<div class="price-sub">Satu tingkatan</div>
+<div class="price-sub">
+Satu tingkatan
+</div>
+
 
 <ul class="price-list">
-<li>ERPH tanpa jadual</li>
-<li>ERPH + Jadual</li>
+
+<li>eRPH tanpa jadual</li>
+<li>eRPH + jadual</li>
 <li>Sehingga 8 tingkatan</li>
 <li>RPT setahun</li>
-<li>Template dihantar ke email</li>
+<li>Template dihantar melalui email</li>
 <li>Sokongan Telegram</li>
+
 </ul>
+
 
 <a href="#pakej" class="btn btn-gold">
 Lihat Pakej ↓
 </a>
 
 </div>
+
 </div>
+
 </section>
 
 
-<section class="section" id="pakej">
+<!-- PAKEJ -->
+
+<section class="section soft" id="pakej">
 
 <div class="container">
 
 <div class="heading">
 
-<div class="eyebrow">PILIHAN PAKEJ</div>
+<div class="eyebrow">
+PILIH PAKEJ
+</div>
 
-<h2>Pilih pakej anda.</h2>
+<h2>
+Pilih yang sesuai.
+</h2>
 
-<p>Klik <strong>Lihat Pakej</strong> untuk melihat harga.</p>
+<p>
+Klik "Lihat Pakej" untuk harga dan bayaran.
+</p>
 
 </div>
 
 
+<!-- TANPA JADUAL -->
+
 <div class="package-box">
 
 <div class="package-header">
-1. ERPH TANPA JADUAL
+1. eRPH TANPA JADUAL
 </div>
 
 <div class="package-grid">
 
 
 <div class="package-row">
-
+<div>
 <div class="package-name">Satu Tingkatan</div>
 
 <div id="p1" class="hidden-price">
-
 <strong>RM30</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-SATU-TING-1"
@@ -1108,32 +1436,21 @@ target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('p1',this)">
+<button class="view-btn"
+onclick="showPrice('p1',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
+<div>
 <div class="package-name">Dua Tingkatan</div>
 
 <div id="p2" class="hidden-price">
-
 <strong>RM60</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-DUA-TING-2"
@@ -1141,32 +1458,21 @@ target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('p2',this)">
+<button class="view-btn"
+onclick="showPrice('p2',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
+<div>
 <div class="package-name">Tiga Tingkatan</div>
 
 <div id="p3" class="hidden-price">
-
 <strong>RM90</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-TIGA-TING-3"
@@ -1174,32 +1480,21 @@ target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('p3',this)">
+<button class="view-btn"
+onclick="showPrice('p3',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
+<div>
 <div class="package-name">Empat Tingkatan</div>
 
 <div id="p4" class="hidden-price">
-
 <strong>RM120</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-EMPAT-TING-4"
@@ -1207,32 +1502,21 @@ target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('p4',this)">
+<button class="view-btn"
+onclick="showPrice('p4',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
+<div>
 <div class="package-name">Lima Tingkatan</div>
 
 <div id="p5" class="hidden-price">
-
 <strong>RM150</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-LIMA-TING-5"
@@ -1240,32 +1524,21 @@ target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('p5',this)">
+<button class="view-btn"
+onclick="showPrice('p5',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
+<div>
 <div class="package-name">Enam Tingkatan</div>
 
 <div id="p6" class="hidden-price">
-
 <strong>RM180</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-ENAM-TING-6"
@@ -1273,32 +1546,21 @@ target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('p6',this)">
+<button class="view-btn"
+onclick="showPrice('p6',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
+<div>
 <div class="package-name">Tujuh Tingkatan</div>
 
 <div id="p7" class="hidden-price">
-
 <strong>RM210</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-TUJUH-TING-7"
@@ -1306,32 +1568,21 @@ target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('p7',this)">
+<button class="view-btn"
+onclick="showPrice('p7',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
+<div>
 <div class="package-name">Lapan Tingkatan</div>
 
 <div id="p8" class="hidden-price">
-
 <strong>RM240</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-LAPAN-TING-8"
@@ -1339,304 +1590,204 @@ target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('p8',this)">
+<button class="view-btn"
+onclick="showPrice('p8',this)">
 Lihat Pakej
 </button>
-
 </div>
 
+
 </div>
 </div>
 
+
+<!-- JADUAL -->
 
 <div class="package-box">
 
 <div class="package-header">
-2. ERPH + JADUAL
+2. eRPH + JADUAL
 </div>
 
 <div class="package-grid">
 
 
 <div class="package-row">
-
-<div class="package-name">Satu Tingkatan + Jadual</div>
+<div>
+<div class="package-name">1 Tingkatan + Jadual</div>
 
 <div id="j1" class="hidden-price">
-
 <strong>RM60</strong>
-
 <a href="https://toyyibpay.com/ERPH-1-TING-JADUAL"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('j1',this)">
+<button class="view-btn"
+onclick="showPrice('j1',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
-<div class="package-name">Dua Tingkatan + Jadual</div>
+<div>
+<div class="package-name">2 Tingkatan + Jadual</div>
 
 <div id="j2" class="hidden-price">
-
 <strong>RM90</strong>
-
 <a href="https://toyyibpay.com/ERPH-2-TING-JADUAL"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('j2',this)">
+<button class="view-btn"
+onclick="showPrice('j2',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
-<div class="package-name">Tiga Tingkatan + Jadual</div>
+<div>
+<div class="package-name">3 Tingkatan + Jadual</div>
 
 <div id="j3" class="hidden-price">
-
 <strong>RM120</strong>
-
 <a href="https://toyyibpay.com/ERPH-3-TING-JADUAL"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('j3',this)">
+<button class="view-btn"
+onclick="showPrice('j3',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
-<div class="package-name">Empat Tingkatan + Jadual</div>
+<div>
+<div class="package-name">4 Tingkatan + Jadual</div>
 
 <div id="j4" class="hidden-price">
-
 <strong>RM150</strong>
-
 <a href="https://toyyibpay.com/ERPH-4-TING-JADUAL"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('j4',this)">
+<button class="view-btn"
+onclick="showPrice('j4',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
-<div class="package-name">Lima Tingkatan + Jadual</div>
+<div>
+<div class="package-name">5 Tingkatan + Jadual</div>
 
 <div id="j5" class="hidden-price">
-
 <strong>RM180</strong>
-
 <a href="https://toyyibpay.com/ERPH-5-TING-JADUAL"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('j5',this)">
+<button class="view-btn"
+onclick="showPrice('j5',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
-<div class="package-name">Enam Tingkatan + Jadual</div>
+<div>
+<div class="package-name">6 Tingkatan + Jadual</div>
 
 <div id="j6" class="hidden-price">
-
 <strong>RM210</strong>
-
 <a href="https://toyyibpay.com/ERPH-6-TING-JDUAL"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('j6',this)">
+<button class="view-btn"
+onclick="showPrice('j6',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
-<div class="package-name">Tujuh Tingkatan + Jadual</div>
+<div>
+<div class="package-name">7 Tingkatan + Jadual</div>
 
 <div id="j7" class="hidden-price">
-
 <strong>RM240</strong>
-
 <a href="https://toyyibpay.com/ERPH-7-TING-JDUAL"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('j7',this)">
+<button class="view-btn"
+onclick="showPrice('j7',this)">
 Lihat Pakej
 </button>
-
 </div>
 
 
 <div class="package-row">
-
-<div class="package-name">Lapan Tingkatan + Jadual</div>
+<div>
+<div class="package-name">8 Tingkatan + Jadual</div>
 
 <div id="j8" class="hidden-price">
-
 <strong>RM270</strong>
-
 <a href="https://toyyibpay.com/ERPH-8-TING-JADUAL"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
 </a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
+</div>
 </div>
 
-</div>
-
-<button class="view-btn" onclick="showPrice('j8',this)">
+<button class="view-btn"
+onclick="showPrice('j8',this)">
 Lihat Pakej
 </button>
-
 </div>
 
+
 </div>
 </div>
 
+
+<!-- SETTING JADUAL -->
 
 <div class="package-box">
 
@@ -1647,6 +1798,8 @@ Lihat Pakej
 <div class="package-grid">
 
 <div class="package-row">
+
+<div>
 
 <div class="package-name">
 Setting Jadual Sahaja
@@ -1662,18 +1815,6 @@ class="pay-btn">
 Bayar Sekarang
 </a>
 
-<div class="order-warning">
-
-<strong>⚠️ SUDAH BAYAR?</strong>
-
-WAJIB isi Borang Tempahan selepas pembayaran.
-
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="form-btn">
-📝 Isi Borang
-</a>
-
 </div>
 
 </div>
@@ -1686,23 +1827,67 @@ Lihat Pakej
 </div>
 
 </div>
-
 </div>
 
 
 <div class="package-note">
 
-<strong>⚠️ PENTING:</strong>
+<strong>⚠️ PENTING:</strong><br>
+Selepas membuat bayaran melalui ToyyibPay,
+<strong>WAJIB isi Borang Tempahan</strong> untuk melengkapkan tempahan.
 
-Bayaran ToyyibPay sahaja <strong>belum lengkap</strong>.
+</div>
 
-Selepas membuat pembayaran, sila <strong>WAJIB isi Borang Tempahan</strong> supaya pesanan dapat diproses.
+</div>
+
+</section>
+
+
+<!-- SUBJEK -->
+
+<section class="section subject-section" id="subjek">
+
+<div class="container">
+
+<div class="heading">
+
+<div class="eyebrow">
+SUBJEK
+</div>
+
+<h2>
+Subjek yang tersedia.
+</h2>
+
+</div>
+
+
+<div class="subjects">
+
+<span class="subject">Pendidikan Islam — Rumi</span>
+<span class="subject">Pendidikan Islam — Jawi</span>
+<span class="subject">Free Amali Solat</span>
+<span class="subject">Bahasa Inggeris</span>
+<span class="subject">Sejarah</span>
+<span class="subject">Bahasa Melayu</span>
+<span class="subject">Tasawur Islam</span>
+<span class="subject">Pendidikan Seni Visual</span>
+<span class="subject">Landskap dan Nurseri</span>
+<span class="subject">Prinsip Perakaunan</span>
+<span class="subject">Perniagaan</span>
+<span class="subject">PVMA</span>
+<span class="subject">Ekonomi</span>
+<span class="subject">Geografi</span>
+<span class="subject">Pendidikan Jasmani dan Kesihatan</span>
+<span class="subject">KKQ — Jawi</span>
 
 </div>
 
 </div>
 </section>
 
+
+<!-- TEMPAHAN -->
 
 <section class="section soft" id="tempahan">
 
@@ -1711,12 +1896,16 @@ Selepas membuat pembayaran, sila <strong>WAJIB isi Borang Tempahan</strong> supa
 <div class="heading">
 
 <div class="eyebrow">
-CARA TEMPAH
+TEMPAHAN
 </div>
 
 <h2>
-4 langkah mudah.
+Selepas bayar, jangan lupa isi borang.
 </h2>
+
+<p>
+Ini langkah paling penting untuk melengkapkan tempahan.
+</p>
 
 </div>
 
@@ -1726,15 +1915,28 @@ CARA TEMPAH
 
 <div class="order-card">
 
-<div class="steps">
+<div class="order-alert">
+
+<strong>⚠️ WAJIB ISI BORANG</strong>
+
+<p>
+Bayaran ToyyibPay sahaja <strong>belum melengkapkan tempahan.</strong>
+Selepas pembayaran, sila isi Borang Tempahan.
+</p>
+
+</div>
+
 
 <div class="step">
 
 <div class="step-number">1</div>
 
 <div>
-<strong>Pilih Pakej</strong>
-<p>Pilih bilangan tingkatan dan jenis eRPH.</p>
+<strong>Pilih pakej</strong>
+
+<p>
+Pilih pakej mengikut tingkatan dan jadual.
+</p>
 </div>
 
 </div>
@@ -1745,8 +1947,11 @@ CARA TEMPAH
 <div class="step-number">2</div>
 
 <div>
-<strong>Buat Bayaran</strong>
-<p>Klik Bayar Sekarang melalui ToyyibPay.</p>
+<strong>Buat pembayaran</strong>
+
+<p>
+Klik Bayar Sekarang melalui ToyyibPay.
+</p>
 </div>
 
 </div>
@@ -1757,25 +1962,22 @@ CARA TEMPAH
 <div class="step-number">3</div>
 
 <div>
-<strong>WAJIB Isi Borang</strong>
-<p>Selepas bayaran, isi borang tempahan.</p>
+<strong>ISI BORANG TEMPAHAN</strong>
+
+<p>
+Selepas pembayaran, terus isi borang supaya tempahan dapat diproses.
+</p>
 </div>
 
 </div>
 
 
-<div class="step">
-
-<div class="step-number">4</div>
-
-<div>
-<strong>Terima eRPH</strong>
-<p>Template dihantar ke email dalam 1–2 hari atau lebih awal.</p>
-</div>
-
-</div>
-
-</div>
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="btn btn-green"
+style="width:100%;">
+📝 ISI BORANG TEMPAHAN
+</a>
 
 </div>
 
@@ -1783,53 +1985,52 @@ CARA TEMPAH
 <div class="order-card">
 
 <h3>
-📧 Jangan Lupa!
+📧 Penghantaran Template
 </h3>
 
+<br>
+
 <p>
-<strong>Bayaran sahaja tidak lengkap.</strong>
+Template eRPH akan dihantar ke email anda
+dalam masa <strong>1–2 hari atau sebelum itu.</strong>
 </p>
 
 <br>
 
 <p>
-Selepas membuat pembayaran ToyyibPay,
-<strong>WAJIB isi Borang Tempahan.</strong>
+<strong>📌 Sila semak folder SPAM</strong>
+jika tiada di Inbox.
 </p>
 
 
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank"
-class="btn btn-green"
-style="margin-top:18px">
-📝 ISI BORANG TEMPAHAN
-</a>
+<div class="contact-box">
 
-
-<br><br>
-
-<p>
-Template akan dihantar ke email.
-
-Sila semak folder <strong>SPAM</strong> jika tiada di Inbox.
-</p>
-
-
-<div class="telegram-box">
+<strong>Perlu bantuan?</strong>
 
 <a href="https://t.me/Edu_UNARCHANNEL"
-target="_blank"
-class="btn btn-green">
+target="_blank">
 📢 Telegram Channel
 </a>
 
 <a href="https://t.me/+yNVyX1s8Xg02YjQ9"
-target="_blank"
-class="btn btn-gold">
-💬 Telegram Chat
+target="_blank">
+💬 Telegram Chat / Pertanyaan
+</a>
+
+<a href="mailto:unar6012@gmail.com">
+📧 Email: unar6012@gmail.com
 </a>
 
 </div>
+
+<br>
+
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="btn btn-green"
+style="width:100%;">
+📝 Borang Tempahan
+</a>
 
 </div>
 
@@ -1839,21 +2040,23 @@ class="btn btn-gold">
 
 </section>
 
+
+<!-- CTA -->
 
 <section class="cta">
 
 <div class="container">
 
-<h2>Sedia mudahkan RPH?</h2>
+<h2>
+Sedia mudahkan RPH?
+</h2>
 
 <p>
-eRPH UNAR — lebih mudah, lebih pantas, lebih tersusun.
+eRPH UNAR — mudah, pantas & tersusun.
 </p>
 
-<div class="cta-buttons">
-
-<a href="#demo" class="btn btn-gold">
-Lihat Demo
+<a href="#pakej" class="btn btn-gold">
+🛒 Lihat Pakej
 </a>
 
 <a href="https://t.me/Edu_UNARCHANNEL"
@@ -1865,15 +2068,15 @@ class="btn btn-white">
 <a href="https://t.me/+yNVyX1s8Xg02YjQ9"
 target="_blank"
 class="btn btn-white">
-💬 Telegram Chat
+💬 Pertanyaan
 </a>
-
-</div>
 
 </div>
 
 </section>
 
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -1902,10 +2105,12 @@ Template eRPH Sekolah Menengah.
 <h4>Pautan</h4>
 
 <a href="#kelebihan">Kelebihan</a>
+<a href="#guru">Untuk Guru</a>
 <a href="#demo">Demo</a>
 <a href="#panduan">Panduan</a>
 <a href="#harga">Harga</a>
 <a href="#pakej">Pakej</a>
+<a href="#tempahan">Tempahan</a>
 
 </div>
 
@@ -1922,6 +2127,10 @@ target="_blank">
 <a href="https://t.me/+yNVyX1s8Xg02YjQ9"
 target="_blank">
 💬 Telegram Chat
+</a>
+
+<a href="mailto:unar6012@gmail.com">
+📧 unar6012@gmail.com
 </a>
 
 <a href="https://forms.gle/Bzkx7dDErswXUU1K6"
@@ -1953,24 +2162,24 @@ target="_blank">
 
 function showPrice(id,button){
 
-const box=document.getElementById(id);
+    const box=document.getElementById(id);
 
-if(box.classList.contains("show")){
+    if(box.classList.contains("show")){
 
-box.classList.remove("show");
-button.textContent="Lihat Pakej";
+        box.classList.remove("show");
+        button.textContent="Lihat Pakej";
 
-}else{
+    }else{
 
-box.classList.add("show");
-button.textContent="Tutup";
+        box.classList.add("show");
+        button.textContent="Tutup";
 
-}
+    }
 
 }
 
 </script>
 
+
 </body>
 </html>
-```
