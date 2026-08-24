@@ -1,9 +1,9 @@
+```html
 <!DOCTYPE html>
 <html lang="ms">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>eRPH UNAR | Sistem eRPH Digital untuk Guru</title>
 
 <style>
@@ -16,7 +16,6 @@
 --text:#17352d;
 --muted:#64746e;
 --border:#d8eee5;
---light:#ecfdf5;
 }
 
 *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
@@ -70,7 +69,7 @@ background:linear-gradient(135deg,var(--green),var(--emerald))
 .menu{
 display:flex;
 align-items:center;
-gap:18px
+gap:17px
 }
 
 .menu a{
@@ -82,7 +81,7 @@ font-weight:600
 .menu .telegram{
 color:white;
 background:var(--green);
-padding:9px 16px;
+padding:9px 15px;
 border-radius:22px
 }
 
@@ -220,7 +219,7 @@ text-align:center;
 padding:10px
 }
 
-/* SECTIONS */
+/* SECTION */
 
 .section{padding:70px 0}
 
@@ -487,8 +486,6 @@ font-size:11px;
 font-weight:bold
 }
 
-/* PERINGATAN */
-
 .order-warning{
 margin-top:12px;
 padding:12px;
@@ -576,6 +573,15 @@ color:var(--muted);
 font-size:13px
 }
 
+/* TELEGRAM */
+
+.telegram-box{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+margin-top:18px
+}
+
 /* CTA */
 
 .cta{
@@ -593,6 +599,13 @@ margin-bottom:10px
 .cta p{
 color:#d8f8eb;
 margin-bottom:20px
+}
+
+.cta-buttons{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px
 }
 
 /* FOOTER */
@@ -715,6 +728,10 @@ width:100%
 .cta h2{
 font-size:30px
 }
+
+.telegram-box{
+flex-direction:column
+}
 }
 
 @media(max-width:400px){
@@ -743,7 +760,19 @@ grid-template-columns:1fr
 <a href="#panduan">Panduan</a>
 <a href="#harga">Harga</a>
 <a href="#pakej">Pakej</a>
-<a href="https://t.me/Edu_UNARCHANNEL" target="_blank" class="telegram">Telegram</a>
+
+<a href="https://t.me/Edu_UNARCHANNEL"
+target="_blank"
+class="telegram">
+📢 Channel
+</a>
+
+<a href="https://t.me/+yNVyX1s8Xg02YjQ9"
+target="_blank"
+class="telegram">
+💬 Chat
+</a>
+
 </nav>
 
 </div>
@@ -768,11 +797,21 @@ eRPH berasaskan spreadsheet online untuk membantu guru sekolah menengah mengurus
 
 <div class="hero-buttons">
 
-<a href="#demo" class="btn btn-gold">Lihat Demo →</a>
+<a href="#demo" class="btn btn-gold">
+Lihat Demo →
+</a>
 
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank"
-class="btn btn-white">📲 Telegram</a>
+class="btn btn-white">
+📢 Telegram Channel
+</a>
+
+<a href="https://t.me/+yNVyX1s8Xg02YjQ9"
+target="_blank"
+class="btn btn-white">
+💬 Telegram Chat
+</a>
 
 </div>
 
@@ -1047,19 +1086,21 @@ Lihat Pakej ↓
 </div>
 
 
-<!-- TANPA JADUAL -->
-
 <div class="package-box">
 
-<div class="package-header">1. ERPH TANPA JADUAL</div>
+<div class="package-header">
+1. ERPH TANPA JADUAL
+</div>
 
 <div class="package-grid">
 
 
 <div class="package-row">
+
 <div class="package-name">Satu Tingkatan</div>
 
 <div id="p1" class="hidden-price">
+
 <strong>RM30</strong>
 
 <a href="https://toyyibpay.com/ERPH-UNAR-SATU-TING-1"
@@ -1077,353 +1118,25 @@ class="form-btn">
 📝 Isi Borang
 </a>
 </div>
+
 </div>
 
 <button class="view-btn" onclick="showPrice('p1',this)">
 Lihat Pakej
 </button>
+
 </div>
 
 
 <div class="package-row">
+
 <div class="package-name">Dua Tingkatan</div>
 
 <div id="p2" class="hidden-price">
+
 <strong>RM60</strong>
+
 <a href="https://toyyibpay.com/ERPH-UNAR-DUA-TING-2"
-target="_blank"
-class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('p2',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Tiga Tingkatan</div>
-
-<div id="p3" class="hidden-price">
-<strong>RM90</strong>
-<a href="https://toyyibpay.com/ERPH-UNAR-TIGA-TING-3"
-target="_blank"
-class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('p3',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Empat Tingkatan</div>
-
-<div id="p4" class="hidden-price">
-<strong>RM120</strong>
-<a href="https://toyyibpay.com/ERPH-UNAR-EMPAT-TING-4"
-target="_blank"
-class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('p4',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Lima Tingkatan</div>
-
-<div id="p5" class="hidden-price">
-<strong>RM150</strong>
-<a href="https://toyyibpay.com/ERPH-UNAR-LIMA-TING-5"
-target="_blank"
-class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('p5',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Enam Tingkatan</div>
-
-<div id="p6" class="hidden-price">
-<strong>RM180</strong>
-<a href="https://toyyibpay.com/ERPH-UNAR-ENAM-TING-6"
-target="_blank"
-class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('p6',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Tujuh Tingkatan</div>
-
-<div id="p7" class="hidden-price">
-<strong>RM210</strong>
-<a href="https://toyyibpay.com/ERPH-UNAR-TUJUH-TING-7"
-target="_blank"
-class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('p7',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Lapan Tingkatan</div>
-
-<div id="p8" class="hidden-price">
-<strong>RM240</strong>
-<a href="https://toyyibpay.com/ERPH-UNAR-LAPAN-TING-8"
-target="_blank"
-class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('p8',this)">Lihat Pakej</button>
-</div>
-
-</div>
-</div>
-
-
-<!-- + JADUAL -->
-
-<div class="package-box">
-
-<div class="package-header">2. ERPH + JADUAL</div>
-
-<div class="package-grid">
-
-
-<div class="package-row">
-<div class="package-name">Satu Tingkatan + Jadual</div>
-
-<div id="j1" class="hidden-price">
-<strong>RM60</strong>
-<a href="https://toyyibpay.com/ERPH-1-TING-JADUAL"
-target="_blank" class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('j1',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Dua Tingkatan + Jadual</div>
-
-<div id="j2" class="hidden-price">
-<strong>RM90</strong>
-<a href="https://toyyibpay.com/ERPH-2-TING-JADUAL"
-target="_blank" class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('j2',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Tiga Tingkatan + Jadual</div>
-
-<div id="j3" class="hidden-price">
-<strong>RM120</strong>
-<a href="https://toyyibpay.com/ERPH-3-TING-JADUAL"
-target="_blank" class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('j3',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Empat Tingkatan + Jadual</div>
-
-<div id="j4" class="hidden-price">
-<strong>RM150</strong>
-<a href="https://toyyibpay.com/ERPH-4-TING-JADUAL"
-target="_blank" class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('j4',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Lima Tingkatan + Jadual</div>
-
-<div id="j5" class="hidden-price">
-<strong>RM180</strong>
-<a href="https://toyyibpay.com/ERPH-5-TING-JADUAL"
-target="_blank" class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('j5',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Enam Tingkatan + Jadual</div>
-
-<div id="j6" class="hidden-price">
-<strong>RM210</strong>
-<a href="https://toyyibpay.com/ERPH-6-TING-JDUAL"
-target="_blank" class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('j6',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Tujuh Tingkatan + Jadual</div>
-
-<div id="j7" class="hidden-price">
-<strong>RM240</strong>
-<a href="https://toyyibpay.com/ERPH-7-TING-JDUAL"
-target="_blank" class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('j7',this)">Lihat Pakej</button>
-</div>
-
-
-<div class="package-row">
-<div class="package-name">Lapan Tingkatan + Jadual</div>
-
-<div id="j8" class="hidden-price">
-<strong>RM270</strong>
-<a href="https://toyyibpay.com/ERPH-8-TING-JADUAL"
-target="_blank" class="pay-btn">Bayar Sekarang</a>
-
-<div class="order-warning">
-<strong>⚠️ SUDAH BAYAR?</strong>
-WAJIB isi Borang Tempahan selepas pembayaran.
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
-target="_blank" class="form-btn">📝 Isi Borang</a>
-</div>
-</div>
-
-<button class="view-btn" onclick="showPrice('j8',this)">Lihat Pakej</button>
-</div>
-
-</div>
-</div>
-
-
-<!-- SETTING JADUAL -->
-
-<div class="package-box">
-
-<div class="package-header">3. TAMBAHAN SETTING JADUAL</div>
-
-<div class="package-grid">
-
-<div class="package-row">
-
-<div class="package-name">Setting Jadual Sahaja</div>
-
-<div id="s1" class="hidden-price">
-
-<strong>RM30</strong>
-
-<a href="https://toyyibpay.com/TAMBAHAN-SETTING-JADUAL-SHJ"
 target="_blank"
 class="pay-btn">
 Bayar Sekarang
@@ -1441,7 +1154,205 @@ class="form-btn">
 
 </div>
 
-<button class="view-btn" onclick="showPrice('s1',this)">
+<button class="view-btn" onclick="showPrice('p2',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Tiga Tingkatan</div>
+
+<div id="p3" class="hidden-price">
+
+<strong>RM90</strong>
+
+<a href="https://toyyibpay.com/ERPH-UNAR-TIGA-TING-3"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('p3',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Empat Tingkatan</div>
+
+<div id="p4" class="hidden-price">
+
+<strong>RM120</strong>
+
+<a href="https://toyyibpay.com/ERPH-UNAR-EMPAT-TING-4"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('p4',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Lima Tingkatan</div>
+
+<div id="p5" class="hidden-price">
+
+<strong>RM150</strong>
+
+<a href="https://toyyibpay.com/ERPH-UNAR-LIMA-TING-5"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('p5',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Enam Tingkatan</div>
+
+<div id="p6" class="hidden-price">
+
+<strong>RM180</strong>
+
+<a href="https://toyyibpay.com/ERPH-UNAR-ENAM-TING-6"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('p6',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Tujuh Tingkatan</div>
+
+<div id="p7" class="hidden-price">
+
+<strong>RM210</strong>
+
+<a href="https://toyyibpay.com/ERPH-UNAR-TUJUH-TING-7"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('p7',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Lapan Tingkatan</div>
+
+<div id="p8" class="hidden-price">
+
+<strong>RM240</strong>
+
+<a href="https://toyyibpay.com/ERPH-UNAR-LAPAN-TING-8"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('p8',this)">
 Lihat Pakej
 </button>
 
@@ -1450,10 +1361,343 @@ Lihat Pakej
 </div>
 </div>
 
+
+<div class="package-box">
+
+<div class="package-header">
+2. ERPH + JADUAL
+</div>
+
+<div class="package-grid">
+
+
+<div class="package-row">
+
+<div class="package-name">Satu Tingkatan + Jadual</div>
+
+<div id="j1" class="hidden-price">
+
+<strong>RM60</strong>
+
+<a href="https://toyyibpay.com/ERPH-1-TING-JADUAL"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('j1',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Dua Tingkatan + Jadual</div>
+
+<div id="j2" class="hidden-price">
+
+<strong>RM90</strong>
+
+<a href="https://toyyibpay.com/ERPH-2-TING-JADUAL"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('j2',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Tiga Tingkatan + Jadual</div>
+
+<div id="j3" class="hidden-price">
+
+<strong>RM120</strong>
+
+<a href="https://toyyibpay.com/ERPH-3-TING-JADUAL"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('j3',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Empat Tingkatan + Jadual</div>
+
+<div id="j4" class="hidden-price">
+
+<strong>RM150</strong>
+
+<a href="https://toyyibpay.com/ERPH-4-TING-JADUAL"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('j4',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Lima Tingkatan + Jadual</div>
+
+<div id="j5" class="hidden-price">
+
+<strong>RM180</strong>
+
+<a href="https://toyyibpay.com/ERPH-5-TING-JADUAL"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('j5',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Enam Tingkatan + Jadual</div>
+
+<div id="j6" class="hidden-price">
+
+<strong>RM210</strong>
+
+<a href="https://toyyibpay.com/ERPH-6-TING-JDUAL"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('j6',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Tujuh Tingkatan + Jadual</div>
+
+<div id="j7" class="hidden-price">
+
+<strong>RM240</strong>
+
+<a href="https://toyyibpay.com/ERPH-7-TING-JDUAL"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('j7',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+
+<div class="package-row">
+
+<div class="package-name">Lapan Tingkatan + Jadual</div>
+
+<div id="j8" class="hidden-price">
+
+<strong>RM270</strong>
+
+<a href="https://toyyibpay.com/ERPH-8-TING-JADUAL"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+<strong>⚠️ SUDAH BAYAR?</strong>
+WAJIB isi Borang Tempahan selepas pembayaran.
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+</div>
+
+</div>
+
+<button class="view-btn" onclick="showPrice('j8',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="package-box">
+
+<div class="package-header">
+3. TAMBAHAN SETTING JADUAL
+</div>
+
+<div class="package-grid">
+
+<div class="package-row">
+
+<div class="package-name">
+Setting Jadual Sahaja
+</div>
+
+<div id="s1" class="hidden-price">
+
+<strong>RM30</strong>
+
+<a href="https://toyyibpay.com/TAMBAHAN-SETTING-JADUAL-SHJ"
+target="_blank"
+class="pay-btn">
+Bayar Sekarang
+</a>
+
+<div class="order-warning">
+
+<strong>⚠️ SUDAH BAYAR?</strong>
+
+WAJIB isi Borang Tempahan selepas pembayaran.
+
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank"
+class="form-btn">
+📝 Isi Borang
+</a>
+
+</div>
+
+</div>
+
+<button class="view-btn"
+onclick="showPrice('s1',this)">
+Lihat Pakej
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
 <div class="package-note">
-<strong>⚠️ Penting:</strong>
+
+<strong>⚠️ PENTING:</strong>
+
 Bayaran ToyyibPay sahaja <strong>belum lengkap</strong>.
+
 Selepas membuat pembayaran, sila <strong>WAJIB isi Borang Tempahan</strong> supaya pesanan dapat diproses.
+
 </div>
 
 </div>
@@ -1466,48 +1710,69 @@ Selepas membuat pembayaran, sila <strong>WAJIB isi Borang Tempahan</strong> supa
 
 <div class="heading">
 
-<div class="eyebrow">CARA TEMPAH</div>
+<div class="eyebrow">
+CARA TEMPAH
+</div>
 
-<h2>4 langkah mudah.</h2>
+<h2>
+4 langkah mudah.
+</h2>
 
 </div>
 
+
 <div class="order-grid">
+
 
 <div class="order-card">
 
 <div class="steps">
 
 <div class="step">
+
 <div class="step-number">1</div>
+
 <div>
 <strong>Pilih Pakej</strong>
 <p>Pilih bilangan tingkatan dan jenis eRPH.</p>
 </div>
+
 </div>
 
+
 <div class="step">
+
 <div class="step-number">2</div>
+
 <div>
 <strong>Buat Bayaran</strong>
 <p>Klik Bayar Sekarang melalui ToyyibPay.</p>
 </div>
+
 </div>
 
+
 <div class="step">
+
 <div class="step-number">3</div>
+
 <div>
 <strong>WAJIB Isi Borang</strong>
 <p>Selepas bayaran, isi borang tempahan.</p>
 </div>
+
 </div>
 
+
 <div class="step">
+
 <div class="step-number">4</div>
+
 <div>
 <strong>Terima eRPH</strong>
 <p>Template dihantar ke email dalam 1–2 hari atau lebih awal.</p>
 </div>
+
 </div>
 
 </div>
@@ -1517,7 +1782,9 @@ Selepas membuat pembayaran, sila <strong>WAJIB isi Borang Tempahan</strong> supa
 
 <div class="order-card">
 
-<h3>📧 Jangan Lupa!</h3>
+<h3>
+📧 Jangan Lupa!
+</h3>
 
 <p>
 <strong>Bayaran sahaja tidak lengkap.</strong>
@@ -1530,27 +1797,36 @@ Selepas membuat pembayaran ToyyibPay,
 <strong>WAJIB isi Borang Tempahan.</strong>
 </p>
 
-<br>
 
 <a href="https://forms.gle/Bzkx7dDErswXUU1K6"
 target="_blank"
-class="btn btn-green">
+class="btn btn-green"
+style="margin-top:18px">
 📝 ISI BORANG TEMPAHAN
 </a>
+
 
 <br><br>
 
 <p>
 Template akan dihantar ke email.
+
 Sila semak folder <strong>SPAM</strong> jika tiada di Inbox.
 </p>
 
-<br>
+
+<div class="telegram-box">
 
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank"
+class="btn btn-green">
+📢 Telegram Channel
+</a>
+
+<a href="https://t.me/+yNVyX1s8Xg02YjQ9"
+target="_blank"
 class="btn btn-gold">
-📲 Telegram
+💬 Telegram Chat
 </a>
 
 </div>
@@ -1558,6 +1834,9 @@ class="btn btn-gold">
 </div>
 
 </div>
+
+</div>
+
 </section>
 
 
@@ -1567,7 +1846,11 @@ class="btn btn-gold">
 
 <h2>Sedia mudahkan RPH?</h2>
 
-<p>eRPH UNAR — lebih mudah, lebih pantas, lebih tersusun.</p>
+<p>
+eRPH UNAR — lebih mudah, lebih pantas, lebih tersusun.
+</p>
+
+<div class="cta-buttons">
 
 <a href="#demo" class="btn btn-gold">
 Lihat Demo
@@ -1576,8 +1859,16 @@ Lihat Demo
 <a href="https://t.me/Edu_UNARCHANNEL"
 target="_blank"
 class="btn btn-white">
-📲 Telegram Edu@UNARCHANNEL
+📢 Telegram Channel
 </a>
+
+<a href="https://t.me/+yNVyX1s8Xg02YjQ9"
+target="_blank"
+class="btn btn-white">
+💬 Telegram Chat
+</a>
+
+</div>
 
 </div>
 
@@ -1588,42 +1879,71 @@ class="btn btn-white">
 
 <div class="container footer-grid">
 
-<div>
-<div class="footer-title">eRPH UNAR</div>
-<p>Sistem eRPH Digital untuk Guru.</p>
-<p>Template eRPH Sekolah Menengah.</p>
-</div>
 
 <div>
+
+<div class="footer-title">
+eRPH UNAR
+</div>
+
+<p>
+Sistem eRPH Digital untuk Guru.
+</p>
+
+<p>
+Template eRPH Sekolah Menengah.
+</p>
+
+</div>
+
+
+<div>
+
 <h4>Pautan</h4>
+
 <a href="#kelebihan">Kelebihan</a>
 <a href="#demo">Demo</a>
 <a href="#panduan">Panduan</a>
 <a href="#harga">Harga</a>
 <a href="#pakej">Pakej</a>
+
 </div>
 
+
 <div>
+
 <h4>Hubungi</h4>
 
-<a href="https://t.me/Edu_UNARCHANNEL" target="_blank">
-📲 Telegram
+<a href="https://t.me/Edu_UNARCHANNEL"
+target="_blank">
+📢 Telegram Channel
 </a>
 
-<a href="https://forms.gle/Bzkx7dDErswXUU1K6" target="_blank">
+<a href="https://t.me/+yNVyX1s8Xg02YjQ9"
+target="_blank">
+💬 Telegram Chat
+</a>
+
+<a href="https://forms.gle/Bzkx7dDErswXUU1K6"
+target="_blank">
 📝 Borang Tempahan
 </a>
 
-<a href="https://bit.ly/PanduanPDFErph" target="_blank">
+<a href="https://bit.ly/PanduanPDFErph"
+target="_blank">
 📄 Panduan PDF
 </a>
 
 </div>
 
+
 </div>
 
+
 <div class="container copyright">
+
 © UNAR ERPH Template. Hak Cipta Terpelihara.
+
 </div>
 
 </footer>
@@ -1653,3 +1973,4 @@ button.textContent="Tutup";
 
 </body>
 </html>
+```
